@@ -13,6 +13,12 @@ import java.sql.Date;
  * @author Chamalki Madushika
  */
 public class ChequeDetail {
+    
+    public static int CHEQUE_DETAIL_ACCOUNT_PAY_ONLY=1;
+    public static int CHEQUE_DETAIL_NOT_ACCOUNT_PAY=0;
+    
+    public static int CHEQUE_DETAIL_STATUS_ACTIVE=1;
+    public static int CHEQUE_DETAIL_STATUS_INACTIVE=0;
 
     private int chequeDetailId;
     private Date chequeDetailCurrentDate;

@@ -10,9 +10,12 @@ package com.cms.model;
  * @author Chamalki Madushika
  */
 public class Client {
+    
+    public static int CLIENT_STATUS_ACTIVE=1;
+    public static int CLIENT_STATUS_INACTIVE=0;
  
     private int clientDetailId;
-    private String clinetDetailName;
+    private String clientDetailName;
     private String clientDetailContactNo;
     private int clientDetailStatus;
     private String clientDetailDetail;
@@ -32,17 +35,17 @@ public class Client {
     }
 
     /**
-     * @return the clinetDetailName
+     * @return the clientDetailName
      */
-    public String getClinetDetailName() {
-        return clinetDetailName;
+    public String getClientDetailName() {
+        return clientDetailName;
     }
 
     /**
-     * @param clinetDetailName the clinetDetailName to set
+     * @param clientDetailName the clientDetailName to set
      */
-    public void setClinetDetailName(String clinetDetailName) {
-        this.clinetDetailName = clinetDetailName;
+    public void setClientDetailName(String clientDetailName) {
+        this.clientDetailName = clientDetailName;
     }
 
     /**

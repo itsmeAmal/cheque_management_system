@@ -10,6 +10,9 @@ package com.cms.model;
  * @author Chamalki Madushika
  */
 public class User {
+    
+    public static int USER_STATUS_ACTIVE=1;
+    public static int USER_STATUS_INACTIVE=0;
 
     private int userId;
     private String userName;
