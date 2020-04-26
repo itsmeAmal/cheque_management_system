@@ -46,17 +46,21 @@ public class chequeDetailDaoImpl implements chequeDetailDao{
 
     @Override
     public ResultSet getAllChequeDetails() throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new commonDaoImpl().getAllRecords(selectQuery);
     }
 
     @Override
     public ResultSet getChequeDetailByOneAttribute(String attribute, String condition, String value) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new commonDaoImpl().getResultByAttribute(selectQuery, attribute, condition, value);
     }
 
     @Override
     public boolean deleteChequeDetail(int chequeDetailId) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection con = DatabaseConnection.getDatabaseConnection();
+        PreparedStatement ps = con.prepareStatement("delete from cheque_detail where cheque_detail_id=?");
+        ps.setInt(1, chequeDetailId);
+        ps.executeUpdate();
+        return true;
     }
     
 }
