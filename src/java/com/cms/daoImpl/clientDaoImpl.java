@@ -19,17 +19,18 @@ import java.sql.SQLException;
  */
 public class clientDaoImpl implements clientDao{
     
-    private String selectQuery="select client_detail_id, client_detail_name, client_detail_contact_no, client_detail_status, client_detail_detail from client";
+    private String selectQuery="select client_detail_id, client_detail_name, client_detail_contact_no, client_detail_status, client_detail_detail, client_detail_nic from client";
 
     @Override
     public void addClient(Client client) throws SQLException {
         Connection con = DatabaseConnection.getDatabaseConnection();
-        PreparedStatement ps = con.prepareStatement("insert into client (client_detail_name, client_detail_contact_no, client_detail_status, client_detail_detail) "
-                + "values (?,?,?,?)");
+        PreparedStatement ps = con.prepareStatement("insert into client (client_detail_name, client_detail_contact_no, client_detail_status, client_detail_detail, client_detail_nic) "
+                + "values (?,?,?,?,?)");
         ps.setString(1, client.getClientDetailName());
         ps.setString(2, client.getClientDetailContactNo());
-        ps.setInt(3, Client.CLIENT_STATUS_ACTIVE);
+        ps.setInt(3, Client.getCLIENT_STATUS_ACTIVE());
         ps.setString(4, client.getClientDetailDetail());
+        ps.setString(5, client.getClientDetailNic());
         ps.executeUpdate();
         ps.close();
     }

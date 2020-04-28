@@ -1,6 +1,6 @@
 <%-- 
-    Document   : addUser
-    Created on : Apr 26, 2020, 10:24:01 PM
+    Document   : addIssueCheque
+    Created on : Apr 27, 2020, 1:44:03 PM
     Author     : Chamalki Madushika
 --%>
 
@@ -9,20 +9,33 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Create User Account</title>
+        <title>Issue Cheque</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     </head>
     <body>
         <form action="#">
-            <div style="position: absolute; left: 35%; top: 2%; width: 30%; height: 80%; background-color: #cccccc">
+            <div style="position: absolute; left: 20%; top: 2%; width: 60%; height: 80%; background-color: #cccccc">
             </div>
-            <div class="form-group" style="position: absolute; left: 40%; top: 7%; width: 20%; height: 15px">
-                <h4>CREATE USER ACCOUNT</h4>
+            <div class="form-group" style="position: absolute; left: 25%; top: 7%; width: 20%; height: 15px">
+                <h4>ISSUE CHEQUES</h4>
             </div>
 
-            <div class="form-group" style="position: absolute; left: 40%; top: 15%; width: 20%; height: 15px">
+            <div class="form-group" style="position: absolute; left: 25%; top: 15%; width: 15%; height: 15px">
+                <div class="dropdown">
+                    <div id="exp_month">
+                        <select class="form-control" name="bank">
+                            <option>Bank Of Ceylon</option>
+                            <option>Nations Trust</option>
+                            <option>People's Bank</option>
+                            <option>Commercial Bank</option>
+                            <option>Sampath Bank</option>
+                            <option>National Savings Bank</option>
+                            <option>Seylan Bank</option>
+                            <option>Hatton National Bank</option>
+                        </select>
+                    </div>
+                </div>
 
-                <input type="text" class="form-control" id="usr" placeholder="User Name" required>
             </div>
             <div class="form-group" style="position: absolute; left: 40%; top: 23%; width: 20%; height: 15px">
 
@@ -39,7 +52,7 @@
             <!-- Default unchecked -->
             <div class="custom-control custom-checkbox" style="position: absolute; left: 40%; top: 46%; width: 50px; height: 10px">
                 <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-                
+
             </div>
             <div style="position: absolute; left: 41%; top: 45%; width: 17%; height: 30px">
                 <label for="defaultUnchecked"><h6>To create a User Account, you’ll need to agree to the Terms of Service.</h6></label>
