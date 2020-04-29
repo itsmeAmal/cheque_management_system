@@ -110,6 +110,12 @@
             <div class="form-group" style="position: absolute; left: 1055px; top: 45%; width: 20%; height: 15px">
                 <button type="button" class="btn btn-info">Issue Cheque</button>
             </div>
+            <div class="form-group" style="position: absolute; left: 35%; top: 45%; width: 15%; height: 15px">
+                <input type="text" class="form-control" id="chq_no" placeholder="Cheque Number" required>
+            </div>
+            <div class="form-group" style="position: absolute; left: 25%; top: 45%; width: 10%; height: 15px">
+                <h4>Cheque Number</h4>
+            </div>
 
             <div class="container" style="position: absolute; left: 22%; top: 55%; width: 56%; height: 100%">
                 <h5>Cheque History</h5>

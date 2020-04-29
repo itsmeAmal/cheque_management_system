@@ -26,15 +26,20 @@
             </div>
             <div class="form-group" style="position: absolute; left: 40%; top: 23%; width: 20%; height: 15px">
 
-                <input type="text" class="form-control" id="contactno" placeholder="Contact No" required>
+                <input type="text" class="form-control" id="contact_no" placeholder="Contact No" required>
             </div>
             
             <div class="form-group" style="position: absolute; left: 40%; top: 31%; width: 20%; height: 15px">
 
+                <input type="text" class="form-control" id="nic" placeholder="NIC">
+            </div>
+            <div class="form-group" style="position: absolute; left: 40%; top: 39%; width: 20%; height: 15px">
+
                 <input type="text" class="form-control" id="note" placeholder="Note">
             </div>
+            
 
-            <div class="form-group" style="position: absolute; left: 40%; top: 42%; width: 20%; height: 15px">
+            <div class="form-group" style="position: absolute; left: 40%; top: 50%; width: 20%; height: 15px">
                 <button type="button" class="btn btn-info">Create Account</button>
             </div>
 
