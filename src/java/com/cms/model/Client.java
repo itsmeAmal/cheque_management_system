@@ -11,8 +11,8 @@ package com.cms.model;
  */
 public class Client {
     
-    private static int CLIENT_STATUS_ACTIVE=1;
-    private static int CLIENT_STATUS_INACTIVE=0;
+    public static int CLIENT_STATUS_ACTIVE=1;
+    public static int CLIENT_STATUS_INACTIVE=0;
  
     private int clientDetailId;
     private String clientDetailName;
@@ -90,34 +90,6 @@ public class Client {
      */
     public void setClientDetailDetail(String clientDetailDetail) {
         this.clientDetailDetail = clientDetailDetail;
-    }
-
-    /**
-     * @return the CLIENT_STATUS_ACTIVE
-     */
-    public static int getCLIENT_STATUS_ACTIVE() {
-        return CLIENT_STATUS_ACTIVE;
-    }
-
-    /**
-     * @param aCLIENT_STATUS_ACTIVE the CLIENT_STATUS_ACTIVE to set
-     */
-    public static void setCLIENT_STATUS_ACTIVE(int aCLIENT_STATUS_ACTIVE) {
-        CLIENT_STATUS_ACTIVE = aCLIENT_STATUS_ACTIVE;
-    }
-
-    /**
-     * @return the CLIENT_STATUS_INACTIVE
-     */
-    public static int getCLIENT_STATUS_INACTIVE() {
-        return CLIENT_STATUS_INACTIVE;
-    }
-
-    /**
-     * @param aCLIENT_STATUS_INACTIVE the CLIENT_STATUS_INACTIVE to set
-     */
-    public static void setCLIENT_STATUS_INACTIVE(int aCLIENT_STATUS_INACTIVE) {
-        CLIENT_STATUS_INACTIVE = aCLIENT_STATUS_INACTIVE;
     }
 
     /**

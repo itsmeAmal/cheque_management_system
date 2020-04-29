@@ -28,7 +28,7 @@ public class clientDaoImpl implements clientDao{
                 + "values (?,?,?,?,?)");
         ps.setString(1, client.getClientDetailName());
         ps.setString(2, client.getClientDetailContactNo());
-        ps.setInt(3, Client.getCLIENT_STATUS_ACTIVE());
+        ps.setInt(3, Client.CLIENT_STATUS_ACTIVE);
         ps.setString(4, client.getClientDetailDetail());
         ps.setString(5, client.getClientDetailNic());
         ps.executeUpdate();

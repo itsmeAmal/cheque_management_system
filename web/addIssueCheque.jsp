@@ -16,11 +16,17 @@
         <form action="#">
             <div style="position: absolute; left: 20%; top: 2%; width: 60%; height: 80%; background-color: #cccccc">
             </div>
-            <div class="form-group" style="position: absolute; left: 25%; top: 7%; width: 20%; height: 15px">
+            <div style="position: absolute; left: 22%; top: 7%; width: 56%; height: 45%; background-color: #99ff99">
+
+            </div>
+            <div class="form-group" style="position: absolute; left: 25%; top: 10%; width: 20%; height: 15px">
                 <h4>ISSUE CHEQUES</h4>
             </div>
 
-            <div class="form-group" style="position: absolute; left: 25%; top: 15%; width: 15%; height: 15px">
+            <div style="position: absolute; left: 25%; top: 15%; width: 20%; height: 15px">
+                <h4>Bank</h4>
+            </div>
+            <div class="form-group" style="position: absolute; left: 25%; top: 20%; width: 15%; height: 15px">
                 <div class="dropdown">
                     <div id="exp_month">
                         <select class="form-control" name="bank">
@@ -37,33 +43,102 @@
                 </div>
 
             </div>
-            <div class="form-group" style="position: absolute; left: 40%; top: 23%; width: 20%; height: 15px">
-
-                <input type="text" class="form-control" id="email" placeholder="Email" required>
+            <div style="position: absolute; left: 780px; top: 15%; width: 30%; height: 15px">
+                <h4>Cheque Date</h4>
             </div>
-            <div class="form-group" style="position: absolute; left: 40%; top: 31%; width: 20%; height: 15px">
-
-                <input type="password" class="form-control" id="pwd" placeholder="Password" required>
+            <!------1-->
+            <div class="form-group" style="position: absolute; left: 780px; top: 20%; width: 40px; height: 15px">
+                <input type="text" class="form-control" id="d1" placeholder="D" required>
             </div>
-            <div class="form-group" style="position: absolute; left: 40%; top: 37%; width: 20%; height: 15px">
-                <h6>Use 8 or more characters with a mix of letters, numbers & symbols</h6>
+            <!------2-->
+            <div class="form-group" style="position: absolute; left: 830px; top: 20%; width: 40px; height: 15px">
+                <input type="text" class="form-control" id="d2" placeholder="D" required>
+            </div>
+            <!------3-->
+            <div class="form-group" style="position: absolute; left: 880px; top: 20%; width: 40px; height: 15px">
+                <input type="text" class="form-control" id="m1" placeholder="M" required>
+            </div>
+            <!------4-->
+            <div class="form-group" style="position: absolute; left: 930px; top: 20%; width: 40px; height: 15px">
+                <input type="text" class="form-control" id="m2" placeholder="M" required>
+            </div>
+            <!------5-->
+            <div class="form-group" style="position: absolute; left: 980px; top: 20%; width: 40px; height: 15px">
+                <input type="text" class="form-control" id="y1" placeholder="Y" required>
+            </div>
+            <!------6-->
+            <div class="form-group" style="position: absolute; left: 1030px; top: 20%; width: 40px; height: 15px">
+                <input type="text" class="form-control" id="y2" placeholder="Y" required>
+            </div>
+            <!------7-->
+            <div class="form-group" style="position: absolute; left: 1080px; top: 20%; width: 40px; height: 15px">
+                <input type="text" class="form-control" id="y3" placeholder="Y" required>
+            </div>
+            <!------8-->
+            <div class="form-group" style="position: absolute; left: 1130px; top: 20%; width: 40px; height: 15px">
+                <input type="text" class="form-control" id="y4" placeholder="Y" required>
             </div>
 
-            <!-- Default unchecked -->
-            <div class="custom-control custom-checkbox" style="position: absolute; left: 40%; top: 46%; width: 50px; height: 10px">
-                <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-
-            </div>
-            <div style="position: absolute; left: 41%; top: 45%; width: 17%; height: 30px">
-                <label for="defaultUnchecked"><h6>To create a User Account, you’ll need to agree to the Terms of Service.</h6></label>
+            <div class="form-group" style="position: absolute; left: 25%; top: 28%; width: 5%; height: 15px">
+                <h4>PAY</h4>
             </div>
 
-            <div class="form-group" style="position: absolute; left: 40%; top: 56%; width: 20%; height: 15px">
-                <button type="button" class="btn btn-info">Create Account</button>
+            <div class="form-group" style="position: absolute; left: 28%; top: 28%; width: 30%; height: 15px">
+                <div class="dropdown">
+                    <div id="exp_month">
+                        <select class="form-control" name="bank">
+                            <option>Cargills Food City</option>
+                            <option>Leaver Brothers</option>
+                            <option>Punchi Banda</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="position: absolute; left: 59%; top: 28%; width: 10%; height: 15px">
+                <h4>Or Bearer</h4>
+            </div>
+            <div class="form-group" style="position: absolute; left: 25%; top: 36%; width: 10%; height: 15px">
+                <h4>Rupees...............................................................................</h4>
+            </div>
+            <div class="form-group" style="position: absolute; left: 57%; top: 36%; width: 10%; height: 15px">
+                <h4>Rs:</h4>
+            </div>
+            <div class="form-group" style="position: absolute; left: 60%; top: 36%; width: 16%; height: 15px">
+                <input type="text" class="form-control" id="rs" placeholder="Amount" required>
             </div>
 
+            <div class="form-group" style="position: absolute; left: 1055px; top: 45%; width: 20%; height: 15px">
+                <button type="button" class="btn btn-info">Issue Cheque</button>
+            </div>
 
+            <div class="container" style="position: absolute; left: 22%; top: 55%; width: 56%; height: 100%">
+                <h5>Cheque History</h5>
 
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Cheque Number</th>
+                            <th>Bank</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr class="info">
+                            <td>2020/10/10</td>
+                            <td>226455</td>
+                            <td>Nations Trust</td>
+                            <td>50000.00</td>
+                            <td><div>
+                                    <button type="button" class="btn btn-danger">Status</button>
+                                </div></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
         </form>
     </body>
 </html>
