@@ -12,24 +12,32 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
     <body>
-
-        <nav class="navbar navbar-inverse" style="position: fixed; width: 100%">
+        <nav class="navbar navbar-inverse" style="position: fixed; width: 100%; background-color: #000000">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">C M S</a>
+                    <a class="navbar-brand" href="#"> C M S </a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Register / Add<span class="caret"></span></a>
+                    <li class="active"><a href="#">DASHBOARD</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Add / Register<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Users</a></li>
-                            <li><a href="#">Clients</a></li>
-                            <li><a href="#">Cheques</a></li>
+                            <li><a href="#">Register Users</a></li>
+                            <li><a href="#">Add Cheque Details</a></li>
+                            <li><a href="#">Register Clients</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Page 2</a></li>
+                    <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Manage<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Manage User Accounts</a></li>
+                            <li><a href="#">Manage Cheques</a></li>
+                            <li><a href="#">Manage Client Details</a></li>
+                        </ul>
+
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
