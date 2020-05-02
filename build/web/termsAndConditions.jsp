@@ -11,6 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Terms And Conditions</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <%@include file="navigationBar.jsp" %>
     </head>
     <body>
         <div style="position: absolute; left: 25%; top: 2%; width: 50%; height: 109%; background-color: #cccccc">

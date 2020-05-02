@@ -22,17 +22,18 @@ import java.util.logging.Logger;
  */
 public class userDaoImpl implements userDao{
     
-    private String selectQuery="select user_id, user_name, user_email, user_password, user_status, user_detail from user";
+    private String selectQuery="select user_id, user_name, user_email, user_password, user_status, user_detail, user_type from user";
 
     @Override
     public void addUser(User user) throws SQLException {
         Connection con=DatabaseConnection.getDatabaseConnection();
-        PreparedStatement ps = con.prepareStatement("insert into user (user_name, user_email, user_password, user_status, user_detail) values (?,?,?,?,?)");
+        PreparedStatement ps = con.prepareStatement("insert into user (user_name, user_email, user_password, user_status, user_detail, user_type) values (?,?,?,?,?,?)");
         ps.setString(1, user.getUserName());
         ps.setString(2, user.getUserEmail());
         ps.setString(3, user.getUserPassword());
         ps.setInt(4, User.USER_STATUS_ACTIVE);
         ps.setString(5, user.getUserDetail());
+        ps.setInt(6, user.getUserType());
         ps.executeUpdate();
         ps.close();
         

@@ -14,9 +14,12 @@
     </head>
     <body>
         <form action="#">
-            <div style="position: absolute; left: 20%; top: 2%; width: 60%; height: 80%; background-color: #cccccc">
+            <div style="z-index:100">
+                <%@include file="navigationBar.jsp" %>
             </div>
-            <div class="container" style="position: absolute; left: 22%; top: 5%; width: 56%; height: 100%">
+            <div style="position: absolute; left: 20%; top: 15%; width: 60%; height: 80%; background-color: #cccccc">
+            </div>
+            <div class="container" style="position: absolute; left: 22%; top: 18%; width: 56%; height: 100%">
                 <h4>Manage Users</h4>
 
                 <table class="table">
@@ -37,7 +40,7 @@
                             <td>
                                 <div class="form-group" style="position: absolute">
                                     <div class="dropdown">
-                                        <div id="exp_month">
+                                        <div id="user_type">
                                             <select class="form-control" name="user_type">
                                                 <option>Admin</option>
                                                 <option>Manager</option>

@@ -8,6 +8,8 @@ package com.cms.databaseConnection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -15,23 +17,16 @@ import java.sql.SQLException;
  */
 public class DatabaseConnection {
 
-    private DatabaseConnection(){
+    private DatabaseConnection() {
     }
-    
-    private static String databaseName = "cheque_management_system";
-    private static String url = "jdbc:mysql://localhost:3306/cheque_management_system";
-    private static String user = "root";
-    private static String password = "1234";
-
-    private static Connection con = null;
 
     public static Connection getDatabaseConnection() throws SQLException {
-        if (con == null) {
-            try {
-                con = DriverManager.getConnection(url, user, password);
-            } catch (SQLException ex) {
-            }
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
+            Logger.getLogger(DatabaseConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cheque_management_system", "root", "1234");
         return con;
     }
 

@@ -20,6 +20,7 @@ public class User {
     private String userPassword;
     private int userStatus;
     private String userDetail;
+    private int userType;
 
     /**
      * @return the userId
@@ -103,6 +104,20 @@ public class User {
      */
     public void setUserDetail(String userDetail) {
         this.userDetail = userDetail;
+    }
+
+    /**
+     * @return the userType
+     */
+    public int getUserType() {
+        return userType;
+    }
+
+    /**
+     * @param userType the userType to set
+     */
+    public void setUserType(int userType) {
+        this.userType = userType;
     }
     
 }
