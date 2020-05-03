@@ -15,19 +15,19 @@
     </head>
     <body>
         <form action="#">
-            <div style="position: absolute; left: 20%; top: 2%; width: 60%; height: 80%; background-color: #cccccc">
+            <div style="position: absolute; left: 20%; top: 12%; width: 60%; height: 80%; background-color: #cccccc">
             </div>
-            <div style="position: absolute; left: 22%; top: 7%; width: 56%; height: 45%; background-color: #99ff99">
+            <div style="position: absolute; left: 22%; top: 17%; width: 56%; height: 45%; background-color: #99ff99">
 
             </div>
-            <div class="form-group" style="position: absolute; left: 25%; top: 10%; width: 20%; height: 15px">
+            <div class="form-group" style="position: absolute; left: 25%; top: 20%; width: 20%; height: 15px">
                 <h4>ISSUE CHEQUES</h4>
             </div>
 
-            <div style="position: absolute; left: 25%; top: 15%; width: 20%; height: 15px">
+            <div style="position: absolute; left: 25%; top: 25%; width: 20%; height: 15px">
                 <h4>Bank</h4>
             </div>
-            <div class="form-group" style="position: absolute; left: 25%; top: 20%; width: 15%; height: 15px">
+            <div class="form-group" style="position: absolute; left: 25%; top: 30%; width: 15%; height: 15px">
                 <div class="dropdown">
                     <div id="exp_month">
                         <select class="form-control" name="bank">
@@ -44,15 +44,15 @@
                 </div>
 
             </div>
-            <div style="position: absolute; left: 780px; top: 15%; width: 30%; height: 15px">
+            <div style="position: absolute; left: 780px; top: 25%; width: 30%; height: 15px">
                 <h4>Cheque Date</h4>
             </div>
             <!------1-->
-            <div class="form-group" style="position: absolute; left: 780px; top: 20%; width: 40px; height: 15px">
+            <div class="form-group" style="position: absolute; left: 780px; top: 30%; width: 40px; height: 15px">
                 <input type="text" class="form-control" id="d1" placeholder="D" required>
             </div>
             <!------2-->
-            <div class="form-group" style="position: absolute; left: 830px; top: 20%; width: 40px; height: 15px">
+            <div class="form-group" style="position: absolute; left: 830px; top: 30%; width: 40px; height: 15px">
                 <input type="text" class="form-control" id="d2" placeholder="D" required>
             </div>
             <!------3-->
@@ -60,31 +60,31 @@
                 <input type="text" class="form-control" id="m1" placeholder="M" required>
             </div>
             <!------4-->
-            <div class="form-group" style="position: absolute; left: 930px; top: 20%; width: 40px; height: 15px">
+            <div class="form-group" style="position: absolute; left: 930px; top: 30%; width: 40px; height: 15px">
                 <input type="text" class="form-control" id="m2" placeholder="M" required>
             </div>
             <!------5-->
-            <div class="form-group" style="position: absolute; left: 980px; top: 20%; width: 40px; height: 15px">
+            <div class="form-group" style="position: absolute; left: 980px; top: 30%; width: 40px; height: 15px">
                 <input type="text" class="form-control" id="y1" placeholder="Y" required>
             </div>
             <!------6-->
-            <div class="form-group" style="position: absolute; left: 1030px; top: 20%; width: 40px; height: 15px">
+            <div class="form-group" style="position: absolute; left: 1030px; top: 30%; width: 40px; height: 15px">
                 <input type="text" class="form-control" id="y2" placeholder="Y" required>
             </div>
             <!------7-->
-            <div class="form-group" style="position: absolute; left: 1080px; top: 20%; width: 40px; height: 15px">
+            <div class="form-group" style="position: absolute; left: 1080px; top: 30%; width: 40px; height: 15px">
                 <input type="text" class="form-control" id="y3" placeholder="Y" required>
             </div>
             <!------8-->
-            <div class="form-group" style="position: absolute; left: 1130px; top: 20%; width: 40px; height: 15px">
+            <div class="form-group" style="position: absolute; left: 1130px; top: 30%; width: 40px; height: 15px">
                 <input type="text" class="form-control" id="y4" placeholder="Y" required>
             </div>
 
-            <div class="form-group" style="position: absolute; left: 25%; top: 28%; width: 5%; height: 15px">
+            <div class="form-group" style="position: absolute; left: 25%; top: 38%; width: 5%; height: 15px">
                 <h4>PAY</h4>
             </div>
 
-            <div class="form-group" style="position: absolute; left: 28%; top: 28%; width: 30%; height: 15px">
+            <div class="form-group" style="position: absolute; left: 28%; top: 38%; width: 30%; height: 15px">
                 <div class="dropdown">
                     <div id="exp_month">
                         <select class="form-control" name="bank">
@@ -95,30 +95,30 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="position: absolute; left: 59%; top: 28%; width: 10%; height: 15px">
+            <div class="form-group" style="position: absolute; left: 59%; top: 38%; width: 10%; height: 15px">
                 <h4>Or Bearer</h4>
             </div>
-            <div class="form-group" style="position: absolute; left: 25%; top: 36%; width: 10%; height: 15px">
+            <div class="form-group" style="position: absolute; left: 25%; top: 46%; width: 10%; height: 15px">
                 <h4>Rupees...............................................................................</h4>
             </div>
-            <div class="form-group" style="position: absolute; left: 57%; top: 36%; width: 10%; height: 15px">
+            <div class="form-group" style="position: absolute; left: 57%; top: 46%; width: 10%; height: 15px">
                 <h4>Rs:</h4>
             </div>
-            <div class="form-group" style="position: absolute; left: 60%; top: 36%; width: 16%; height: 15px">
+            <div class="form-group" style="position: absolute; left: 60%; top: 46%; width: 16%; height: 15px">
                 <input type="text" class="form-control" id="rs" placeholder="Amount" required>
             </div>
 
-            <div class="form-group" style="position: absolute; left: 1055px; top: 45%; width: 20%; height: 15px">
+            <div class="form-group" style="position: absolute; left: 1055px; top: 55%; width: 20%; height: 15px">
                 <button type="button" class="btn btn-info">Issue Cheque</button>
             </div>
-            <div class="form-group" style="position: absolute; left: 35%; top: 45%; width: 15%; height: 15px">
+            <div class="form-group" style="position: absolute; left: 35%; top: 55%; width: 15%; height: 15px">
                 <input type="text" class="form-control" id="chq_no" placeholder="Cheque Number" required>
             </div>
-            <div class="form-group" style="position: absolute; left: 25%; top: 45%; width: 10%; height: 15px">
+            <div class="form-group" style="position: absolute; left: 25%; top: 55%; width: 10%; height: 15px">
                 <h4>Cheque Number</h4>
             </div>
 
-            <div class="container" style="position: absolute; left: 22%; top: 55%; width: 56%; height: 100%">
+            <div class="container" style="position: absolute; left: 22%; top: 65%; width: 56%; height: 100%">
                 <h5>Cheque History</h5>
 
                 <table class="table">
@@ -142,7 +142,6 @@
                                     <button type="button" class="btn btn-danger">Status</button>
                                 </div></td>
                         </tr>
-
                     </tbody>
                 </table>
             </div>

@@ -5,7 +5,9 @@
  */
 package com.cms.servlet;
 
-import com.cms.controller.clientController;
+import com.cms.controller.commonController;
+import com.cms.controller.userController;
+import com.cms.model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -16,13 +18,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Chamalki Madushika
+ * @author Amal
  */
-@WebServlet(urlPatterns = {"/addClient"})
-public class addClient extends HttpServlet {
+@WebServlet(name = "login", urlPatterns = {"/login"})
+public class login extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,46 +33,33 @@ public class addClient extends HttpServlet {
      *
      * @param request servlet request
      * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws IOException {
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
 
-            boolean status = false;
+            String email = request.getParameter("email");
+            String password = request.getParameter("password");
 
-            String clientName = request.getParameter("client_name");
-            String contactNo = request.getParameter("contact_no");
-            String nic = request.getParameter("nic");
-            String note = request.getParameter("note");
-
+            HttpSession session = request.getSession();
             try {
-                status = clientController.addClient(clientName, contactNo, nic, note);
+                boolean status = commonController.loginValidation(email, password);
                 if (status) {
-                    out.write("<html>");
+                    User user = userController.getUserByUserEmail(email);
+                    session.setAttribute("loggedEmail", email);
+                    session.setAttribute("loggedUserName", user.getUserName());
 
-                    out.write("<header>");
-                    out.write("</header>");
-
-                    out.write("<body>");
-                    out.write("<script type=\"text/javascript\">\n"
-                            + "jQuery(document).ready(function($){\n"
-                            + "$(\".frm_message\").delay(5000).fadeOut(1000); // change 5000 to number of seconds in milliseconds  \n"
-                            + "});\n"
-                            + "</script>");
-
-                    out.write("</body>");
-
-                    out.write("</html>");
-
-                    response.sendRedirect("addClient.jsp");
+                    response.sendRedirect("addIssueCheque.jsp");
                 } else {
-                    out.write("Error...!");
+                    response.sendRedirect("login.jsp");
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(addClient.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
             }
+
         }
     }
 

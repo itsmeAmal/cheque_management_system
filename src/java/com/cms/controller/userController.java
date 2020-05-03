@@ -49,8 +49,14 @@ public class userController {
         }
         return user;
     }
-    public static User getUserByUserId(int userId)throws SQLException{
+
+    public static User getUserByUserId(int userId) throws SQLException {
         ResultSet rset = getUserByOneAttribute("user_id", commonConstants.Sql.EQUAL, Integer.toString(userId));
+        return getUserByResultSet(rset);
+    }
+
+    public static User getUserByUserEmail(String email) throws SQLException {
+        ResultSet rset = getUserByOneAttribute("user_email", commonConstants.Sql.EQUAL, email);
         return getUserByResultSet(rset);
     }
 }

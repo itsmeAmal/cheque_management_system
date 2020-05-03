@@ -17,14 +17,14 @@ import java.sql.SQLException;
  *
  * @author Chamalki Madushika
  */
-public class clientDaoImpl implements clientDao{
-    
-    private String selectQuery="select client_detail_id, client_detail_name, client_detail_contact_no, client_detail_status, client_detail_detail, client_detail_nic from client";
+public class clientDaoImpl implements clientDao {
+
+    private String selectQuery = "select client_detail_id, client_detail_name, client_detail_contact_no, client_detail_status, client_detail_detail, client_detail_nic from client";
 
     @Override
-    public void addClient(Client client) throws SQLException {
+    public boolean addClient(Client client) throws SQLException {
         Connection con = DatabaseConnection.getDatabaseConnection();
-        PreparedStatement ps = con.prepareStatement("insert into client (client_detail_name, client_detail_contact_no, client_detail_status, client_detail_detail, client_detail_nic) "
+        PreparedStatement ps = con.prepareStatement("insert into client_detail (client_detail_name, client_detail_contact_no, client_detail_status, client_detail_detail, client_detail_nic) "
                 + "values (?,?,?,?,?)");
         ps.setString(1, client.getClientDetailName());
         ps.setString(2, client.getClientDetailContactNo());
@@ -33,6 +33,7 @@ public class clientDaoImpl implements clientDao{
         ps.setString(5, client.getClientDetailNic());
         ps.executeUpdate();
         ps.close();
+        return true;
     }
 
     @Override
@@ -53,5 +54,5 @@ public class clientDaoImpl implements clientDao{
         ps.executeUpdate();
         return true;
     }
-    
+
 }

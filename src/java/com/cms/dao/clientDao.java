@@ -14,13 +14,13 @@ import java.sql.SQLException;
  * @author Chamalki Madushika
  */
 public interface clientDao {
-    
-    void addClient(Client client)throws SQLException;
-    
-    ResultSet getAllClients()throws SQLException;
-    
-    ResultSet getClientByOneAttribute(String attribute, String condition, String value)throws SQLException;
-    
-    boolean deleteClient(int clientId)throws SQLException;
-    
+
+    boolean addClient(Client client) throws SQLException;
+
+    ResultSet getAllClients() throws SQLException;
+
+    ResultSet getClientByOneAttribute(String attribute, String condition, String value) throws SQLException;
+
+    boolean deleteClient(int clientId) throws SQLException;
+
 }
