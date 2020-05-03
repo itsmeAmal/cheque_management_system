@@ -16,7 +16,7 @@ import java.sql.SQLException;
  */
 public class userController {
 
-    public static void addUser(String userName, String email, String password, String detail, int type) throws SQLException {
+    public static boolean addUser(String userName, String email, String password, String detail, int type) throws SQLException {
         User user = new User();
         user.setUserName(userName);
         user.setUserEmail(email);
@@ -24,7 +24,7 @@ public class userController {
         user.setUserDetail(detail);
         user.setUserType(type);
         user.setUserStatus(User.USER_STATUS_ACTIVE);
-        new userDaoImpl().addUser(user);
+        return new userDaoImpl().addUser(user);
     }
 
     public static ResultSet getAllUsers() throws SQLException {

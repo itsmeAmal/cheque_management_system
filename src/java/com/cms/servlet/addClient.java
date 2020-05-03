@@ -5,8 +5,7 @@
  */
 package com.cms.servlet;
 
-import com.cms.controller.userController;
-import com.cms.model.User;
+import com.cms.controller.clientController;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -22,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Chamalki Madushika
  */
-@WebServlet(urlPatterns = {"/addUser"})
-public class addUser extends HttpServlet {
+@WebServlet(urlPatterns = {"/addClient"})
+public class addClient extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,24 +35,20 @@ public class addUser extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
         response.setContentType("text/html;charset=UTF-8");
-        boolean status = false;
         try (PrintWriter out = response.getWriter()) {
-            String userName = request.getParameter("usr");
-            String email = request.getParameter("email");
-            String pwd = request.getParameter("pwd");
-
+            
+            String clientName = request.getParameter("client_name");
+            String contactNo = request.getParameter("contact_no");
+            String nic = request.getParameter("nic");
+            String note = request.getParameter("note");
+            
             try {
-                status = userController.addUser(userName, email, pwd, "", User.USER_STATUS_ACTIVE);
-                if(status){
-                    response.sendRedirect("addUser.jsp");
-                }else{
-                    out.write("error...!");
-                }
+                clientController.addClient(clientName, contactNo, nic, note);
             } catch (SQLException ex) {
-                Logger.getLogger(addUser.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(addClient.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

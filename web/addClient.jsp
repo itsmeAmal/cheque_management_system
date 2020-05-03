@@ -14,38 +14,27 @@
         <%@include file="navigationBar.jsp" %>
     </head>
     <body>
-        <form action="#">
+        <form action="addClient" method="POST">
             <div style="position: absolute; left: 35%; top: 2%; width: 30%; height: 80%; background-color: #cccccc">
             </div>
             <div class="form-group" style="position: absolute; left: 40%; top: 7%; width: 20%; height: 15px">
                 <h4>CREATE CLIENT ACCOUNT</h4>
             </div>
-
             <div class="form-group" style="position: absolute; left: 40%; top: 15%; width: 20%; height: 15px">
-
-                <input type="text" class="form-control" id="clnt" placeholder="Client Name" required>
+                <input type="text" class="form-control" id="client_name" name="client_name" placeholder="Client Name" required>
             </div>
             <div class="form-group" style="position: absolute; left: 40%; top: 23%; width: 20%; height: 15px">
-
-                <input type="text" class="form-control" id="contact_no" placeholder="Contact No" required>
+                <input type="text" class="form-control" id="contact_no" name="contact_no" placeholder="Contact No" required>
             </div>
-            
             <div class="form-group" style="position: absolute; left: 40%; top: 31%; width: 20%; height: 15px">
-
-                <input type="text" class="form-control" id="nic" placeholder="NIC">
+                <input type="text" class="form-control" id="nic" name="nic"placeholder="NIC">
             </div>
             <div class="form-group" style="position: absolute; left: 40%; top: 39%; width: 20%; height: 15px">
-
-                <input type="text" class="form-control" id="note" placeholder="Note">
+                <input type="text" class="form-control" id="note" name="note" placeholder="Note">
             </div>
-            
-
             <div class="form-group" style="position: absolute; left: 40%; top: 50%; width: 20%; height: 15px">
-                <button type="button" class="btn btn-info">Create Account</button>
+                <input type="submit" class="btn btn-info" value="Create Accoun">
             </div>
-
-
-
         </form>
     </body>
 </html>

@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class dashboard_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class addClient_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -53,7 +53,8 @@ public final class dashboard_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Dashboard</title>\n");
+      out.write("        <title>Create Client Account</title>\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">\n");
       out.write("        ");
       out.write("\n");
       out.write("\n");
@@ -104,35 +105,28 @@ public final class dashboard_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <!--9-->\n");
-      out.write("        <div style=\"position: fixed; left: 0%; top: 6%; width: 100%; height: 100%; background-color: #ffffff\"></div>\n");
-      out.write("        <!--10-->\n");
-      out.write("        <div style=\"position: fixed; left: 0%; top: 6%; width: 17%; height: 100%; background-color: rgba(0, 0, 0, 0.5);\">\n");
-      out.write("            <div style=\"position: absolute; left: 3%; top: 10%; width: 128px; height: 128px\"></div>\n");
-      out.write("            <img src=\"images/manx128.png\" alt=\"Current User\" height=\"128\" width=\"128\" style=\"vertical-align:middle\">\n");
-      out.write("        </div>\n");
-      out.write("        <!--11-->\n");
-      out.write("        <div style=\"position: fixed; left: 20%; top: 12%; width: 15%; height: 100px; background-color: rgba(0, 128, 255, 0.5)\"></div>\n");
-      out.write("        <div style=\"position: fixed; left: 20%; top: 12%; width: 5%; height: 100px; background-color: rgba(0, 128, 255, 0.5)\"></div>\n");
-      out.write("        <!--1-->\n");
-      out.write("        <div style=\"position: absolute; left: 40%; top: 12%; width: 15%; height: 100px; background-color: rgba(0, 204, 0, 0.5)\"></div>\n");
-      out.write("        <div style=\"position: absolute; left: 40%; top: 12%; width: 5%; height: 100px; background-color: rgba(0, 204, 0, 0.5)\"></div>\n");
-      out.write("        <!--2-->\n");
-      out.write("        <div style=\"position: absolute; left: 60%; top: 12%; width: 15%; height: 100px; background-color: rgba(255, 0, 0, 0.5)\"></div>\n");
-      out.write("        <div style=\"position: absolute; left: 60%; top: 12%; width: 5%; height: 100px; background-color: rgba(255, 0, 0, 0.5)\"></div>\n");
-      out.write("        <!--3-->\n");
-      out.write("        <div style=\"position: absolute; left: 80%; top: 12%; width: 15%; height: 100px; background-color: rgba(255, 128, 0, 0.5)\"></div>\n");
-      out.write("        <div style=\"position: absolute; left: 80%; top: 12%; width: 5%; height: 100px; background-color: rgba(255, 128, 0, 0.5)\"></div>\n");
-      out.write("        <!--4-->\n");
-      out.write("        <div style=\"position: absolute; left: 40%; top: 15%; width: 20%; height: 15px\"></div>\n");
-      out.write("        <!--5-->\n");
-      out.write("        <div style=\"position: absolute; left: 40%; top: 15%; width: 20%; height: 15px\"></div>\n");
-      out.write("        <!--6-->\n");
-      out.write("        <div style=\"position: absolute; left: 40%; top: 15%; width: 20%; height: 15px\"></div>\n");
-      out.write("        <!--7-->\n");
-      out.write("        <div style=\"position: absolute; left: 40%; top: 15%; width: 20%; height: 15px\"></div>\n");
-      out.write("        <!--8-->\n");
-      out.write("        <div style=\"position: absolute; left: 40%; top: 15%; width: 20%; height: 15px\"></div>\n");
+      out.write("        <form action=\"addClient\" method=\"POST\">\n");
+      out.write("            <div style=\"position: absolute; left: 35%; top: 2%; width: 30%; height: 80%; background-color: #cccccc\">\n");
+      out.write("            </div>\n");
+      out.write("            <div class=\"form-group\" style=\"position: absolute; left: 40%; top: 7%; width: 20%; height: 15px\">\n");
+      out.write("                <h4>CREATE CLIENT ACCOUNT</h4>\n");
+      out.write("            </div>\n");
+      out.write("            <div class=\"form-group\" style=\"position: absolute; left: 40%; top: 15%; width: 20%; height: 15px\">\n");
+      out.write("                <input type=\"text\" class=\"form-control\" id=\"client_name\" name=\"client_name\" placeholder=\"Client Name\" required>\n");
+      out.write("            </div>\n");
+      out.write("            <div class=\"form-group\" style=\"position: absolute; left: 40%; top: 23%; width: 20%; height: 15px\">\n");
+      out.write("                <input type=\"text\" class=\"form-control\" id=\"contact_no\" name=\"contact_no\" placeholder=\"Contact No\" required>\n");
+      out.write("            </div>\n");
+      out.write("            <div class=\"form-group\" style=\"position: absolute; left: 40%; top: 31%; width: 20%; height: 15px\">\n");
+      out.write("                <input type=\"text\" class=\"form-control\" id=\"nic\" name=\"nic\"placeholder=\"NIC\">\n");
+      out.write("            </div>\n");
+      out.write("            <div class=\"form-group\" style=\"position: absolute; left: 40%; top: 39%; width: 20%; height: 15px\">\n");
+      out.write("                <input type=\"text\" class=\"form-control\" id=\"note\" name=\"note\" placeholder=\"Note\">\n");
+      out.write("            </div>\n");
+      out.write("            <div class=\"form-group\" style=\"position: absolute; left: 40%; top: 50%; width: 20%; height: 15px\">\n");
+      out.write("                <input type=\"submit\" class=\"btn btn-info\" value=\"Create Accoun\">\n");
+      out.write("            </div>\n");
+      out.write("        </form>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

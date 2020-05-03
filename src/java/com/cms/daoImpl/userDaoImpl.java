@@ -5,7 +5,6 @@
  */
 package com.cms.daoImpl;
 
-import com.cms.controller.commonConstants;
 import com.cms.dao.userDao;
 import com.cms.databaseConnection.DatabaseConnection;
 import com.cms.model.User;
@@ -13,8 +12,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -25,7 +22,7 @@ public class userDaoImpl implements userDao{
     private String selectQuery="select user_id, user_name, user_email, user_password, user_status, user_detail, user_type from user";
 
     @Override
-    public void addUser(User user) throws SQLException {
+    public boolean addUser(User user) throws SQLException {
         Connection con=DatabaseConnection.getDatabaseConnection();
         PreparedStatement ps = con.prepareStatement("insert into user (user_name, user_email, user_password, user_status, user_detail, user_type) values (?,?,?,?,?,?)");
         ps.setString(1, user.getUserName());
@@ -36,7 +33,7 @@ public class userDaoImpl implements userDao{
         ps.setInt(6, user.getUserType());
         ps.executeUpdate();
         ps.close();
-        
+        return true;
     }
 
     @Override

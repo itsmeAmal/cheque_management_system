@@ -14,24 +14,20 @@
         <%@include file="navigationBar.jsp" %>
     </head>
     <body>
-        <form action="#">
+        <form action="addUser" method="GET">
             <div style="position: absolute; left: 35%; top: 2%; width: 30%; height: 80%; background-color: #cccccc">
             </div>
             <div class="form-group" style="position: absolute; left: 40%; top: 7%; width: 20%; height: 15px">
                 <h4>CREATE USER ACCOUNT</h4>
             </div>
-
             <div class="form-group" style="position: absolute; left: 40%; top: 15%; width: 20%; height: 15px">
-
-                <input type="text" class="form-control" id="usr" placeholder="User Name" required>
+                <input type="text" class="form-control" id="usr" name="usr" placeholder="User Name" required>
             </div>
             <div class="form-group" style="position: absolute; left: 40%; top: 23%; width: 20%; height: 15px">
-
-                <input type="text" class="form-control" id="email" placeholder="Email" required>
+                <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
             </div>
             <div class="form-group" style="position: absolute; left: 40%; top: 31%; width: 20%; height: 15px">
-
-                <input type="password" class="form-control" id="pwd" placeholder="Password" required>
+                <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password" required>
             </div>
             <div class="form-group" style="position: absolute; left: 40%; top: 37%; width: 20%; height: 15px">
                 <h6>Use 8 or more characters with a mix of letters, numbers & symbols</h6>
@@ -47,7 +43,7 @@
             </div>
 
             <div class="form-group" style="position: absolute; left: 40%; top: 56%; width: 20%; height: 15px">
-                <button type="button" class="btn btn-info">Create Account</button>
+                <input type="submit" class="btn btn-info" value="Create Account">
             </div>
 
 

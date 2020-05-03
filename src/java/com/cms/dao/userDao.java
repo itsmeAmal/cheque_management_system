@@ -15,7 +15,7 @@ import java.sql.SQLException;
  */
 public interface userDao {
     
-    void addUser(User user)throws SQLException;
+    boolean addUser(User user)throws SQLException;
     
     ResultSet getAllUsers()throws SQLException;
     
