@@ -4,6 +4,9 @@
     Author     : Chamalki Madushika
 --%>
 
+<%@page import="com.cms.controller.chequeDetailController"%>
+<%@page import="com.cms.controller.userController"%>
+<%@page import="java.sql.ResultSet"%>
 <%@page import="com.cms.controller.commonController"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -62,7 +65,11 @@
 
         <!--4-->
 
-        <div style="position: absolute; left: 20%; top: 35%; width: 30%; height: 40%; background-color: #009999">
+        <%
+            ResultSet rset = userController.getAllUsers();
+            int i = 0;
+        %>
+        <div style="position: absolute; left: 20%; top: 35%; width: 30%; height: 40%; background-color: rgba(153, 204, 255, 0.5)">
             <table class="table table-striped table-dark">
                 <thead>
                     <tr>
@@ -73,28 +80,37 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <%
+                        while (rset.next()) {
+                    %>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <th scope="row"><%= ++i%></th>
+                        <td><%=rset.getString("user_name")%></td>
+                        <td><%=rset.getString("user_email")%></td>
+                        <td>
+                            <%
+                                if (rset.getInt("user_status") == 1) {
+                            %>
+                            <input type="submit" class="btn btn-primary" value="ACTIVE" style="width: 120px" >
+                            <%
+                            } else if (rset.getInt("user_status") == 0) {
+                            %>
+                            <input type="submit" class="btn btn-danger" value="INACTIVE" style="width: 120px" >
+                            <%
+                                }
+                            %>
+                        </td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
+                    <%
+                        }
+                    %>
                 </tbody>
             </table>
         </div>
         <!--5-->
+        <%
+            ResultSet rset2 = chequeDetailController.getAllChequeDetails();
+        %>
         <div style="position: absolute; left: 55%; top: 35%; width: 30%; height: 40%; background-color: #cc0033">
             <table class="table table-striped table-dark">
                 <thead>
@@ -108,18 +124,6 @@
                 <tbody>
                     <tr>
                         <th scope="row">1</th>
-                        <td>3215</td>
-                        <td>2020/10/10</td>
-                        <td>Pending</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>3215</td>
-                        <td>2020/10/10</td>
-                        <td>Pending</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
                         <td>3215</td>
                         <td>2020/10/10</td>
                         <td>Pending</td>

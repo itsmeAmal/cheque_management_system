@@ -19,7 +19,7 @@ import java.sql.SQLException;
  */
 public class clientDaoImpl implements clientDao {
 
-    private String selectQuery = "select client_detail_id, client_detail_name, client_detail_contact_no, client_detail_status, client_detail_detail, client_detail_nic from client";
+    private String selectQuery = "select client_detail_id, client_detail_name, client_detail_contact_no, client_detail_status, client_detail_detail, client_detail_nic from client_detail";
 
     @Override
     public boolean addClient(Client client) throws SQLException {

@@ -5,27 +5,20 @@
  */
 package com.cms.servlet;
 
-import com.cms.controller.commonController;
-import com.cms.controller.userController;
-import com.cms.model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Amal
  */
-@WebServlet(name = "login", urlPatterns = {"/login"})
-public class login extends HttpServlet {
+@WebServlet(name = "addIssueCheque", urlPatterns = {"/addIssueCheque"})
+public class addIssueCheque extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,24 +34,21 @@ public class login extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
 
-            String email = request.getParameter("email");
-            String password = request.getParameter("password");
+            String bank = request.getParameter("bank");
+            String date1 = request.getParameter("date1");
+            String date2 = request.getParameter("date2");
+            String date3 = request.getParameter("date3");
+            String date4 = request.getParameter("date4");
+            String date5 = request.getParameter("date5");
+            String date6 = request.getParameter("date6");
+            String date7 = request.getParameter("date7");
+            String date8 = request.getParameter("date8");
 
-            HttpSession session = request.getSession();
-            try {
-                boolean status = commonController.loginValidation(email, password);
-                if (status) {
-                    User user = userController.getUserByUserEmail(email);
-                    session.setAttribute("loggedEmail", email);
-                    session.setAttribute("loggedUserName", user.getUserName());
-
-                    response.sendRedirect("dashboard.jsp");
-                } else {
-                    response.sendRedirect("login.jsp");
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            String clientName = request.getParameter("client_name");
+            String paymentAmount = request.getParameter("amount");
+            String chequeNo = request.getParameter("cheque_no");
+            
+            
 
         }
     }

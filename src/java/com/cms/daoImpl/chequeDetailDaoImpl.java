@@ -17,11 +17,11 @@ import java.sql.SQLException;
  *
  * @author Chamalki Madushika
  */
-public class chequeDetailDaoImpl implements chequeDetailDao{
-    
-    private String selectQuery="select cheque_detail_id, cheque_detail_current_date, cheque_detail_cheque_number, cheque_detail_bank, "
+public class chequeDetailDaoImpl implements chequeDetailDao {
+
+    private String selectQuery = "select cheque_detail_id, cheque_detail_current_date, cheque_detail_cheque_number, cheque_detail_bank, "
             + "cheque_detail_amount, cheque_detail_effective_date, cheque_detail_account_pay_only, cheque_detail_client_id, "
-            + "cheque_detail_user_id, cheque_detail_status, cheque_detail_detail from chequeDetail";
+            + "cheque_detail_user_id, cheque_detail_status, cheque_detail_detail from cheque_detail";
 
     @Override
     public void addChequeDetail(ChequeDetail chequeDetail) throws SQLException {
@@ -41,7 +41,7 @@ public class chequeDetailDaoImpl implements chequeDetailDao{
         ps.setString(10, chequeDetail.getChequeDetailDetail());
         ps.executeUpdate();
         ps.close();
-        
+
     }
 
     @Override
@@ -62,5 +62,5 @@ public class chequeDetailDaoImpl implements chequeDetailDao{
         ps.executeUpdate();
         return true;
     }
-    
+
 }
