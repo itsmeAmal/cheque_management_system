@@ -24,9 +24,9 @@ public class chequeDetailDaoImpl implements chequeDetailDao {
             + "cheque_detail_user_id, cheque_detail_status, cheque_detail_detail from cheque_detail";
 
     @Override
-    public void addChequeDetail(ChequeDetail chequeDetail) throws SQLException {
+    public boolean addChequeDetail(ChequeDetail chequeDetail) throws SQLException {
         Connection con = DatabaseConnection.getDatabaseConnection();
-        PreparedStatement ps = con.prepareStatement("insert into chequeDetail (cheque_detail_current_date, cheque_detail_cheque_number,"
+        PreparedStatement ps = con.prepareStatement("insert into cheque_detail (cheque_detail_current_date, cheque_detail_cheque_number,"
                 + " cheque_detail_bank, cheque_detail_amount, cheque_detail_effective_date, cheque_detail_account_pay_only, cheque_detail_client_id,"
                 + " cheque_detail_user_id, cheque_detail_status, cheque_detail_detail) values (?,?,?,?,?,?,?,?,?,?)");
         ps.setDate(1, chequeDetail.getChequeDetailCurrentDate());
@@ -41,7 +41,7 @@ public class chequeDetailDaoImpl implements chequeDetailDao {
         ps.setString(10, chequeDetail.getChequeDetailDetail());
         ps.executeUpdate();
         ps.close();
-
+        return true;
     }
 
     @Override

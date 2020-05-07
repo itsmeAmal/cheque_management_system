@@ -18,7 +18,7 @@ import java.sql.SQLException;
  */
 public class chequeDetailController {
     
-    public static void addChequeDetail(Date currentDate,String chequeNumber,String bank,BigDecimal amount,Date effectiveDate,int clientId,int userId,
+    public static boolean addChequeDetail(Date currentDate,String chequeNumber,String bank,BigDecimal amount,Date effectiveDate,int clientId,int userId,
             String detail,int accountPayOnly)throws SQLException{
         ChequeDetail chequeDeatail = new ChequeDetail();
         chequeDeatail.setChequeDetailCurrentDate(currentDate);
@@ -31,7 +31,7 @@ public class chequeDetailController {
         chequeDeatail.setChequeDetailDetail(detail);
         chequeDeatail.setChequeDetailAccountPayOnly(accountPayOnly);
         chequeDeatail.setChequeDetailStatus(ChequeDetail.CHEQUE_DETAIL_STATUS_ACTIVE);
-        new chequeDetailDaoImpl().addChequeDetail(chequeDeatail);
+        return new chequeDetailDaoImpl().addChequeDetail(chequeDeatail);
     }
     
     public static ResultSet getAllChequeDetails()throws SQLException{

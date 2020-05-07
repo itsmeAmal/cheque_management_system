@@ -33,7 +33,7 @@
                 <input type="text" class="form-control" id="note" name="note" placeholder="Note">
             </div>
             <div class="form-group" style="position: absolute; left: 40%; top: 60%; width: 20%; height: 15px">
-                <input type="submit" class="btn btn-info" value="Create Accoun">
+                <input type="submit" class="btn btn-info" value="Create Account">
             </div>
         </form>
     </body>

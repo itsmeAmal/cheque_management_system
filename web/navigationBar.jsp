@@ -22,12 +22,12 @@
                     <a class="navbar-brand" href="#"> C M S </a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">DASHBOARD</a></li>
+                    <li class="active"><a href="dashboard.jsp">DASHBOARD</a></li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Add / Register<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="addUser.jsp">Register Users</a></li>
                             <li><a href="addIssueCheque.jsp">Add Cheque Details</a></li>
-                            <li><a href="clientManagement.jsp">Register Clients</a></li>
+                            <li><a href="addClient.jsp">Register Clients</a></li>
                         </ul>
                     </li>
                     <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Manage<span class="caret"></span></a>

@@ -117,10 +117,10 @@
                 <input type="text" class="form-control" name="amount" id="rs" placeholder="Amount" required>
             </div>
 
-            <div class="form-group" style="position: absolute; left: 1155px; top: 55%; width: 20%; height: 15px">
+            <div class="form-group" style="position: absolute; left: 805px; top: 55%; width: 20%; height: 15px">
                 <button type="button" class="btn btn-info" style="width: 120px">Apply</button>
             </div>
-            <div class="form-group" style="position: absolute; left: 1305px; top: 55%; width: 20%; height: 15px">
+            <div class="form-group" style="position: absolute; left: 970px; top: 55%; width: 20%; height: 15px">
                 <input type="submit" class="btn btn-danger" style="width: 120px" value="Save">
             </div>
             <div class="form-group" style="position: absolute; left: 35%; top: 55%; width: 15%; height: 15px">

@@ -5,8 +5,15 @@
  */
 package com.cms.servlet;
 
+import com.cms.controller.chequeDetailController;
+import com.cms.controller.commonController;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,6 +41,8 @@ public class addIssueCheque extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
 
+            boolean status = false;
+            
             String bank = request.getParameter("bank");
             String date1 = request.getParameter("date1");
             String date2 = request.getParameter("date2");
@@ -48,6 +57,19 @@ public class addIssueCheque extends HttpServlet {
             String paymentAmount = request.getParameter("amount");
             String chequeNo = request.getParameter("cheque_no");
             
+            String effectiveDate = date1+date2+"-"+date3+date4+"-"+date5+date6+date7+date8;
+            try {
+                status = chequeDetailController.addChequeDetail(commonController.getCurrentJavaSqlDate(), chequeNo, bank,
+                        commonController.getBigDecimalOrZeroFromString(paymentAmount), commonController.getCurrentJavaSqlDate(), 0, 0, "TestDetail", 0);
+                if(status){
+                    response.sendRedirect("addIssueCheque.jsp");
+                }else{
+                    out.write("error...!");
+                }
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(addIssueCheque.class.getName()).log(Level.SEVERE, null, ex);
+            }
             
 
         }

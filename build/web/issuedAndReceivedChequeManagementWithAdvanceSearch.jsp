@@ -15,33 +15,33 @@
     </head>
     <body>
         <form action="#">
-            <div style="position: absolute; left: 20%; top: 7%; width: 60%; height: 80%; background-color: #cccccc">
+            <div style="position: absolute; left: 20%; top: 12%; width: 60%; height: 80%; background-color: #cccccc; z-index:-1">
             </div>
-            <div style="position: absolute; left: 20%; top: 5%; width: 60%; height: 10%; background-color: #ffffff">
-                <div style="position: absolute; left: 2%; top: 35%; width: 15%; height: 10%">
+            <div style="position: absolute; left: 20%; top: 10%; width: 60%; height: 10%; background-color: #ffffff; z-index:-1">
+                <div style="position: absolute; left: 2%; top: 40%; width: 15%; height: 10%;  z-index:-1">
                     <h5>Search by Name : </h5>
                 </div>
-                <div style="position: absolute; left: 15%; top: 35%; width: 20%; height: 10%">
+                <div style="position: absolute; left: 15%; top: 40%; width: 20%; height: 10%">
                     <input type="text" class="form-control" id="search_by_name" placeholder="Search by Name" required>
                 </div>
-                <div style="position: absolute; left: 36%; top: 35%; width: 20%; height: 10%">
+                <div style="position: absolute; left: 36%; top: 40%; width: 20%; height: 10%">
                     <button type="button" class="btn btn-primary">Search</button>
                 </div>
-                <div style="position: absolute; left: 46%; top: 35%; width: 20%; height: 10%">
+                <div style="position: absolute; left: 46%; top: 40%; width: 20%; height: 10%">
                     <select class="form-control" name="cheque_type">
                         <option>Issued Cheques</option>
                         <option>Received Cheques</option>
                     </select>
                 </div>
-                <div style="position: absolute; left: 68%; top: 35%; width: 20%; height: 10%">
+                <div style="position: absolute; left: 68%; top: 40%; width: 20%; height: 10%">
                     <button type="button" class="btn btn-primary">Filter by Status</button>
                 </div>
-                <div style="position: absolute; left: 92%; top: 35%; width: 20%; height: 10%">
+                <div style="position: absolute; left: 92%; top: 40%; width: 20%; height: 10%">
                     <button type="button" class="btn btn-warning">Reset</button>
                 </div>
             </div>
 
-            <div class="container" style="position: absolute; left: 22%; top: 20%; width: 56%; height: 100%">
+            <div class="container" style="position: absolute; left: 22%; top: 25%; width: 56%; height: 100%">
                 <h4>Manage Issued Received Cheques</h4>
                 <table class="table">
                     <thead>
@@ -55,7 +55,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <tr class="info">
                             <td>2020/05/01</td>
                             <td>chamalki</td>

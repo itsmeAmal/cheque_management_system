@@ -15,7 +15,7 @@ import java.sql.SQLException;
  */
 public interface chequeDetailDao {
     
-    void addChequeDetail(ChequeDetail chequeDetail)throws SQLException;
+    boolean addChequeDetail(ChequeDetail chequeDetail)throws SQLException;
     
     ResultSet getAllChequeDetails()throws SQLException;
     

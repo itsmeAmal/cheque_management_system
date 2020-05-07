@@ -58,8 +58,8 @@
         </div>
 
         <!--3-->
-        <div style="position: absolute; left: 80%; top: 12%; width: 15%; height: 100px; background-color: rgba(255, 128, 0, 0.5)">
-            <h3 style="position: absolute; left: 30%; top: 4%; width: 70%; height: 100px; ">Cheques dated</br> for today</h3>
+        <div style="position: absolute; left: 80%; top: 12%; width: 16%; height: 100px; background-color: rgba(255, 128, 0, 0.5)">
+            <h3 style="position: absolute; left: 30%; top: 4%; width: 80%; height: 100px; ">Cheques dated</br> for today</h3>
         </div>
         <div style="position: absolute; left: 80%; top: 12%; width: 4%; height: 100px; background-color: rgba(255, 128, 0, 0.5)"></div>
 
@@ -80,7 +80,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <%
+                    <%                
                         while (rset.next()) {
                     %>
                     <tr>
@@ -91,12 +91,12 @@
                             <%
                                 if (rset.getInt("user_status") == 1) {
                             %>
-                            <input type="submit" class="btn btn-primary" value="ACTIVE" style="width: 120px" >
-                            <%
+                            <input type="submit" class="btn btn-primary" value="DEACTIVATE" style="width: 120px" >
+                            <%    
                             } else if (rset.getInt("user_status") == 0) {
                             %>
-                            <input type="submit" class="btn btn-danger" value="INACTIVE" style="width: 120px" >
-                            <%
+                            <input type="submit" class="btn btn-danger" value="ACTIVATE" style="width: 120px" >
+                            <%        
                                 }
                             %>
                         </td>
@@ -111,23 +111,35 @@
         <%
             ResultSet rset2 = chequeDetailController.getAllChequeDetails();
         %>
-        <div style="position: absolute; left: 55%; top: 35%; width: 30%; height: 40%; background-color: #cc0033">
+        <div style="position: absolute; left: 55%; top: 35%; width: 30%; height: 40%; background-color: rgba(153, 204, 255, 0.5)">
+            <%        
+                ResultSet rset3 = chequeDetailController.getAllChequeDetails();
+            %>
             <table class="table table-striped table-dark">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Cheque No</th>
                         <th scope="col">Date</th>
-                        <th scope="col">Status</th>
+                        <th scope="col">Received/Issued</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <%     
+                        int chequeOrderNumber = 0; 
+                        while (rset3.next()) {                            
+                            
+                        
+                    %>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>3215</td>
-                        <td>2020/10/10</td>
-                        <td>Pending</td>
+                        <th scope="row"><%= ++chequeOrderNumber %></th>
+                        <td><%=rset3.getString("cheque_detail_cheque_number") %></td>
+                        <td><%=rset3.getDate("cheque_detail_effective_date") %></td>
+                        <td>Received</td>
                     </tr>
+                    <%
+                        }
+                    %>
                 </tbody>
             </table>
         </div>

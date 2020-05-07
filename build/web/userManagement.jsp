@@ -14,7 +14,7 @@
     </head>
     <body>
         <form action="#">
-            <div style="z-index:10">
+            <div style="z-index:20">
                 <%@include file="navigationBar.jsp" %>
             </div>
             <div style="position: absolute; left: 20%; top: 15%; width: 60%; height: 80%; background-color: #cccccc; z-index:-1">
