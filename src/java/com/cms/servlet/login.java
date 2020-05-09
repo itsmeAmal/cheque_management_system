@@ -50,7 +50,7 @@ public class login extends HttpServlet {
                 if (status) {
                     User user = userController.getUserByUserEmail(email);
                     session.setAttribute("loggedEmail", email);
-                    session.setAttribute("loggedUserName", user.getUserName());
+                    session.setAttribute("loggedUser", user);
 
                     response.sendRedirect("dashboard.jsp");
                 } else {

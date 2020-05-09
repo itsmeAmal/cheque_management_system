@@ -59,5 +59,9 @@ public class commonController {
             return false;
         }
     }
+    
+    public static BigDecimal getMonthlyChequeDepositValue(int month)throws SQLException{
+        return new commonDaoImpl().getMonthlyChequeDepositValue(month);
+    }
 
 }

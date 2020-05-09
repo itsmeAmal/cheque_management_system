@@ -9,9 +9,10 @@ import com.cms.controller.chequeDetailController;
 import com.cms.controller.commonController;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.math.BigDecimal;
-import java.sql.Date;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -42,7 +43,7 @@ public class addIssueCheque extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
 
             boolean status = false;
-            
+
             String bank = request.getParameter("bank");
             String date1 = request.getParameter("date1");
             String date2 = request.getParameter("date2");
@@ -56,22 +57,27 @@ public class addIssueCheque extends HttpServlet {
             String clientName = request.getParameter("client_name");
             String paymentAmount = request.getParameter("amount");
             String chequeNo = request.getParameter("cheque_no");
-            
-            String effectiveDate = date1+date2+"-"+date3+date4+"-"+date5+date6+date7+date8;
+
+            //String effectiveDate = date1 + date2 + "/" + date3 + date4 + "/" + date5 + date6 + date7 + date8;
+            String effectiveDate = date5 + date6 + date7 + date8 + "/" + date3 + date4 + "/" + date1 + date2;
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+            Date langDate = sdf.parse(effectiveDate);
+            java.sql.Date sqlDate = new java.sql.Date(langDate.getTime());
             try {
                 status = chequeDetailController.addChequeDetail(commonController.getCurrentJavaSqlDate(), chequeNo, bank,
-                        commonController.getBigDecimalOrZeroFromString(paymentAmount), commonController.getCurrentJavaSqlDate(), 0, 0, "TestDetail", 0);
-                if(status){
+                        commonController.getBigDecimalOrZeroFromString(paymentAmount), sqlDate, 0, 0, "TestDetail", 0);
+                if (status) {
                     response.sendRedirect("addIssueCheque.jsp");
-                }else{
+                } else {
                     out.write("error...!");
                 }
-                
+
             } catch (SQLException ex) {
                 Logger.getLogger(addIssueCheque.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
 
+        } catch (ParseException ex) {
+            Logger.getLogger(addIssueCheque.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

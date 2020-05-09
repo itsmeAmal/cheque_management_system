@@ -9,6 +9,7 @@ import com.cms.controller.commonConstants;
 import com.cms.controller.userController;
 import com.cms.dao.commonDao;
 import com.cms.databaseConnection.DatabaseConnection;
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -74,6 +75,20 @@ public class commonDaoImpl implements commonDao {
             status = true;
         }
         return status;
+    }
+    
+    public BigDecimal getMonthlyChequeDepositValue(int month)throws SQLException{
+        BigDecimal value = BigDecimal.ZERO;
+        Connection con = DatabaseConnection.getDatabaseConnection();
+        PreparedStatement ps = con.prepareStatement("select month(cheque_detail_effective_date) as cheque_month,"
+                + "sum(cheque_detail_amount) as total_amount from cheque_detail where month(cheque_detail_effective_date)"
+                + " like ? group by cheque_month");
+        ps.setInt(1, month);
+        ResultSet rset = ps.executeQuery();
+        while (rset.next()) {            
+            value = rset.getBigDecimal("total_amount");
+        }
+        return value;
     }
 
 }

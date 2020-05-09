@@ -4,6 +4,7 @@
     Author     : Chamalki Madushika
 --%>
 
+<%@page import="com.cms.model.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +17,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-inverse" style="position: fixed; width: 100%; background-color: #000000">
+        <nav class="navbar navbar-inverse" style="position: fixed; width: 100%; background-color: #000066">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#"> C M S </a>
@@ -36,12 +37,21 @@
                             <li><a href="issuedAndReceivedChequeManagementWithAdvanceSearch.jsp">Manage Cheques</a></li>
                             <li><a href="clientManagement.jsp">Manage Client Details</a></li>
                         </ul>
-
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <%
+                        HttpSession ses = request.getSession();
+                        User user = (User) ses.getAttribute("loggedUser");
+                        if (user != null) {
+                    %>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Hi, <%=user.getUserName()%></a></li>
+                        <%
+                            } else {
+                                response.sendRedirect("login.jsp"); 
+                            }
+                        %>
+                    <!--<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>-->
                 </ul>
             </div>
         </nav>

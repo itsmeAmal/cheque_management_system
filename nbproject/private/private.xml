@@ -3,14 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Chamalki%20Madushika/Documents/NetBeansProjects/cheque_management_system/web/addUser.jsp</file>
-            <file>file:/C:/Users/Chamalki%20Madushika/Documents/NetBeansProjects/cheque_management_system/src/java/com/cms/daoImpl/clientDaoImpl.java</file>
-            <file>file:/C:/Users/Chamalki%20Madushika/Documents/NetBeansProjects/cheque_management_system/web/addClient.jsp</file>
-            <file>file:/C:/Users/Chamalki%20Madushika/Documents/NetBeansProjects/cheque_management_system/web/termsAndConditions.jsp</file>
-            <file>file:/C:/Users/Chamalki%20Madushika/Documents/NetBeansProjects/cheque_management_system/web/addIssueCheque.jsp</file>
-            <file>file:/C:/Users/Chamalki%20Madushika/Documents/NetBeansProjects/cheque_management_system/src/java/com/cms/model/Client.java</file>
-            <file>file:/C:/Users/Chamalki%20Madushika/Documents/NetBeansProjects/cheque_management_system/src/java/com/cms/controller/clientController.java</file>
-            <file>file:/C:/Users/Chamalki%20Madushika/Documents/NetBeansProjects/cheque_management_system/src/java/com/cms/model/User.java</file>
+            <file>file:/D:/cms/cheque%20management%20system/cheque%20management%20system/web/WEB-INF/web.xml</file>
+            <file>file:/D:/cms/cheque%20management%20system/cheque%20management%20system/web/error.jsp</file>
+            <file>file:/D:/cms/cheque%20management%20system/cheque%20management%20system/src/java/com/cms/controller/commonController.java</file>
+            <file>file:/D:/cms/cheque%20management%20system/cheque%20management%20system/web/barChart.jsp</file>
+            <file>file:/D:/cms/cheque%20management%20system/cheque%20management%20system/web/dashboard.jsp</file>
+            <file>file:/D:/cms/cheque%20management%20system/cheque%20management%20system/src/java/com/cms/servlet/addIssueCheque.java</file>
+            <file>file:/D:/cms/cheque%20management%20system/cheque%20management%20system/src/java/com/cms/daoImpl/commonDaoImpl.java</file>
         </group>
     </open-files>
 </project-private>
