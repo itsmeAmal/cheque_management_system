@@ -13,6 +13,11 @@ public class User {
     
     public static int USER_STATUS_ACTIVE=1;
     public static int USER_STATUS_INACTIVE=0;
+    
+    public static int USER_TYPE_ADMIN=1;
+    public static int USER_TYPE_USER=2;
+    public static int USER_TYPE_MANAGER=3;
+    public static int USER_TYPE_GUEST=4;
 
     private int userId;
     private String userName;

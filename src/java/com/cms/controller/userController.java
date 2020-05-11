@@ -59,4 +59,8 @@ public class userController {
         ResultSet rset = getUserByOneAttribute("user_email", commonConstants.Sql.EQUAL, email);
         return getUserByResultSet(rset);
     }
+    
+    public static boolean changeUserStatus(int userId, int userCurrentStatus)throws SQLException{
+        return new userDaoImpl().changeUserStatus(userId, userCurrentStatus);
+    }
 }

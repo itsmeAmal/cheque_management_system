@@ -55,4 +55,19 @@ public class userDaoImpl implements userDao{
         return true;
     }
     
+    public boolean changeUserStatus(int userId, int userCurrentStatus)throws SQLException{
+        int userStatus = 0;
+        Connection con = DatabaseConnection.getDatabaseConnection();
+        PreparedStatement ps = con.prepareStatement("update user set user_status=? where user_id=?");
+        if (userCurrentStatus==User.USER_STATUS_ACTIVE) {
+            userStatus = User.USER_STATUS_INACTIVE;
+        }else if(userCurrentStatus==User.USER_STATUS_INACTIVE){
+            userStatus = User.USER_STATUS_ACTIVE;
+        }
+        ps.setInt(1, userStatus);
+        ps.setInt(2, userId);
+        ps.executeUpdate();
+        return true;
+    }
+    
 }
