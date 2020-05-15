@@ -5,6 +5,7 @@
  */
 package com.cms.daoImpl;
 
+import com.cms.controller.commonController;
 import com.cms.dao.userDao;
 import com.cms.databaseConnection.DatabaseConnection;
 import com.cms.model.User;
@@ -67,6 +68,16 @@ public class userDaoImpl implements userDao{
         ps.setInt(1, userStatus);
         ps.setInt(2, userId);
         ps.executeUpdate();
+        return true;
+    }
+    
+    public boolean changeUserType(int userId, String userType)throws SQLException{
+        Connection con = DatabaseConnection.getDatabaseConnection();
+        PreparedStatement ps = con.prepareStatement("update user set user_type=? where user_id=?");
+        ps.setInt(1, commonController.getUserIntTypeByUserStringType(userType));
+        ps.setInt(2, userId);
+        ps.executeUpdate();
+        ps.close();
         return true;
     }
     

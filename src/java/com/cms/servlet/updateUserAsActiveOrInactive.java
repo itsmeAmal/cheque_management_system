@@ -16,7 +16,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -38,11 +37,29 @@ public class updateUserAsActiveOrInactive extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-           
-            HttpSession ses = request.getSession();
-            String hidUserId = ses.getAttribute("hiddenUserId").toString();
-            String curUserStatus = ses.getAttribute("hiddenUserCurrentStatus").toString();
-            userController.changeUserStatus(Integer.valueOf(hidUserId), Integer.valueOf(curUserStatus));
+
+            String activeUser = request.getParameter("btn_active_user");
+            String inactiveUser = request.getParameter("btn_inactive_user");
+            String updateUser = request.getParameter("btn_update_user");
+
+            String hidUserId = request.getParameter("hiddenUserId");
+            String curUserStatus = request.getParameter("hiddenUserStatus");
+            String updateUserTypeTo = request.getParameter("user_type");
+
+            if (activeUser == null) {
+                activeUser = "";
+            }
+            if (inactiveUser == null) {
+                inactiveUser = "";
+            }
+            if (updateUser == null) {
+                updateUser = "";
+            }
+            if (activeUser.equalsIgnoreCase("Active User") || inactiveUser.equalsIgnoreCase("Inactive User")) {
+                userController.changeUserStatus(Integer.valueOf(hidUserId), Integer.valueOf(curUserStatus));
+            }else if(updateUser.equalsIgnoreCase("Update")){
+                userController.changeUserType(Integer.valueOf(hidUserId), updateUserTypeTo);
+            }
             response.sendRedirect("userManagement.jsp");
         } catch (SQLException ex) {
             Logger.getLogger(updateUserAsActiveOrInactive.class.getName()).log(Level.SEVERE, null, ex);
