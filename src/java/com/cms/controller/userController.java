@@ -63,4 +63,8 @@ public class userController {
     public static boolean changeUserStatus(int userId, int userCurrentStatus)throws SQLException{
         return new userDaoImpl().changeUserStatus(userId, userCurrentStatus);
     }
+    
+    public static boolean changeUserType(int userId, String userType)throws SQLException{
+        return new userDaoImpl().changeUserType(userId, userType);
+    }
 }

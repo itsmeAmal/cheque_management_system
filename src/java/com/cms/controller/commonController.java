@@ -6,6 +6,7 @@
 package com.cms.controller;
 
 import com.cms.daoImpl.commonDaoImpl;
+import com.cms.model.User;
 import java.math.BigDecimal;
 import java.sql.SQLException;
 
@@ -62,6 +63,20 @@ public class commonController {
     
     public static BigDecimal getMonthlyChequeDepositValue(int month)throws SQLException{
         return new commonDaoImpl().getMonthlyChequeDepositValue(month);
+    }
+    
+    public static int getUserIntTypeByUserStringType(String userTypeString){
+        int userTypeInt = 0;
+        if(userTypeString.equalsIgnoreCase("Admin")){
+            userTypeInt = User.USER_TYPE_ADMIN; 
+       }else if(userTypeString.equalsIgnoreCase("Manager")){
+           userTypeInt = User.USER_TYPE_MANAGER;
+       }else if(userTypeString.equalsIgnoreCase("User")){
+           userTypeInt = User.USER_TYPE_USER;
+       }else if(userTypeString.equalsIgnoreCase("Guest Account")){
+           userTypeInt = User.USER_TYPE_GUEST;
+       }
+        return userTypeInt;
     }
 
 }

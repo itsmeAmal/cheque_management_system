@@ -44,68 +44,68 @@
                     <%                            while (rset.next()) {
                     %>
                     <tr class="info table-bordered" style="background-color: white">
-                        <td><%= rset.getString("user_email")%>
-<!--                            <input type="hidden" value="<%= rset.getInt("user_id")%>" name="hiddenUserId">
-                            <input type="hidden" value="<%= rset.getInt("user_status")%>" name="hiddenUserStatus">-->
-                        </td>
-                        <td><%= rset.getString("user_name")%></td>
-                        <%
-                            String currentUserType = "";
-                            if (rset.getInt("user_type") == User.USER_TYPE_ADMIN) {
-                                currentUserType = "Admin";
-                            } else if (rset.getInt("user_type") == User.USER_TYPE_MANAGER) {
-                                currentUserType = "Manager";
-                            } else if (rset.getInt("user_type") == User.USER_TYPE_USER) {
-                                currentUserType = "User";
-                            } else if (rset.getInt("user_type") == User.USER_TYPE_GUEST) {
-                                currentUserType = "Guest";
-                            }
-                        %>
-                        <td><%= currentUserType%></td>
-                        <td>
-                            <div class="form-group" style="position: absolute">
-                                <div class="dropdown">
-                                    <div id="user_type">
-                                        <select class="form-control" name="user_type">
-                                            <option>--</option>
-                                            <option value=<%= User.USER_TYPE_ADMIN%>>Admin</option>
-                                            <option value=<%= User.USER_TYPE_MANAGER%>>Manager</option>
-                                            <option value=<%= User.USER_TYPE_USER%>>User</option>
-                                            <option value=<%= User.USER_TYPE_GUEST%>>Guest Account</option>
-                                        </select>
-                                    </div>
+                <form action="updateUserAsActiveOrInactive" method="post">
+                    <td><%= rset.getString("user_email")%>
+                        <input type="hidden" value="<%= rset.getInt("user_id")%>" name="hiddenUserId">
+                        <input type="hidden" value="<%= rset.getInt("user_status")%>" name="hiddenUserStatus">
+                    </td>
+                    <td><%= rset.getString("user_name")%></td>
+                    <%
+                        String currentUserType = "";
+                        if (rset.getInt("user_type") == User.USER_TYPE_ADMIN) {
+                            currentUserType = "Admin";
+                        } else if (rset.getInt("user_type") == User.USER_TYPE_MANAGER) {
+                            currentUserType = "Manager";
+                        } else if (rset.getInt("user_type") == User.USER_TYPE_USER) {
+                            currentUserType = "User";
+                        } else if (rset.getInt("user_type") == User.USER_TYPE_GUEST) {
+                            currentUserType = "Guest";
+                        }
+                    %>
+                    <td><%= currentUserType%></td>
+                    <td>
+                        <div class="form-group" style="position: absolute">
+                            <div class="dropdown">
+                                <div id="user_type">
+                                    <select class="form-control" name="user_type">
+                                        <option>--</option>
+                                        <option value=<%= User.USER_TYPE_ADMIN%>>Admin</option>
+                                        <option value=<%= User.USER_TYPE_MANAGER%>>Manager</option>
+                                        <option value=<%= User.USER_TYPE_USER%>>User</option>
+                                        <option value=<%= User.USER_TYPE_GUEST%>>Guest Account</option>
+                                    </select>
                                 </div>
                             </div>
-                        </td>
-                        <td><div>
-                                <form action="updateUserAsActiveOrInactive">
-                                    <%
-                                        HttpSession ses1 = request.getSession();
-                                        ses1.setAttribute("hiddenUserId", Integer.toString(rset.getInt("user_id")));
-                                        ses1.setAttribute("hiddenUserCurrentStatus", Integer.toString(rset.getInt("user_status")));
-                                    %>
-                                    <%
-                                        if (rset.getInt("user_status") == User.USER_STATUS_ACTIVE) {
-                                    %>
-                                    <input type="submit" class="btn btn-info" style="width: 120px" value="Inactive User">
-                                    <%
-                                    } else {
-                                    %>
-                                    <input type="submit" class="btn btn-danger" style="width: 120px" value="Active User">
-                                    <%
-                                        }
-                                    %>
-                                </form>
-                                    </div></td>
-                                    <td>   
-                                        <input type="submit" class="btn btn-primary" value="Update">
-                                    </td>
-                                    </tr>
-                                    <%
-                                        }
-                                    %>
-                                    </tbody>
-                                    </table>
-                            </div>
-                            </body>
-                            </html>
+                        </div>
+                    </td>
+                    <td><div>
+                            <%
+                                HttpSession ses1 = request.getSession();
+                                ses1.setAttribute("hiddenUserId", Integer.toString(rset.getInt("user_id")));
+                                ses1.setAttribute("hiddenUserCurrentStatus", Integer.toString(rset.getInt("user_status")));
+                            %>
+                            <%
+                                if (rset.getInt("user_status") == User.USER_STATUS_ACTIVE) {
+                            %>
+                            <input type="submit" class="btn btn-info" style="width: 120px" value="Inactive User" name="btn_inactive_user">
+                            <%
+                            } else {
+                            %>
+                            <input type="submit" class="btn btn-danger" style="width: 120px" value="Active User" name="btn_active_user">
+                            <%
+                                }
+                            %>
+                        </div></td>
+                    <td>   
+                        <input type="submit" class="btn btn-primary" value="Update" name="btn_update_user">
+                    </td>
+                </form>
+                </tr>
+                <%
+                    }
+                %>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
