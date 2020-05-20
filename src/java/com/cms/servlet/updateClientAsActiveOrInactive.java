@@ -5,7 +5,7 @@
  */
 package com.cms.servlet;
 
-import com.cms.controller.userController;
+import com.cms.controller.clientController;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -21,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Chamalki Madushika
  */
-@WebServlet(name = "updateUserAsActiveOrInactive", urlPatterns = {"/updateUserAsActiveOrInactive"})
-public class updateUserAsActiveOrInactive extends HttpServlet {
+@WebServlet(name = "updateClientAsActiveOrInactive", urlPatterns = {"/updateClientAsActiveOrInactive"})
+public class updateClientAsActiveOrInactive extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,37 +38,13 @@ public class updateUserAsActiveOrInactive extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
 
-            String activeUser = request.getParameter("btn_active_user");
-            String inactiveUser = request.getParameter("btn_inactive_user");
-            String updateUser = request.getParameter("btn_update_user");
+            String hidClientId = request.getParameter("hid_client_id");
+            String curClientStatus = request.getParameter("hid_client_cur_status");
+            clientController.changeClientStatus(Integer.valueOf(hidClientId), Integer.valueOf(curClientStatus));
 
-            String hidUserId = request.getParameter("hiddenUserId");
-            String curUserStatus = request.getParameter("hiddenUserStatus");
-            String updateUserTypeTo = request.getParameter("user_type");
-
-            if (activeUser == null) {
-                activeUser = "";
-            }
-            if (inactiveUser == null) {
-                inactiveUser = "";
-            }
-            if (updateUser == null) {
-                updateUser = "";
-            }
-
-            System.out.println(activeUser);
-            System.out.println(inactiveUser);
-
-            if (activeUser.equalsIgnoreCase("Activate User") || inactiveUser.equalsIgnoreCase("Deactivate User")) {
-                userController.changeUserStatus(Integer.valueOf(hidUserId), Integer.valueOf(curUserStatus));
-            } else if (updateUser.equalsIgnoreCase("Update")) {
-                if (!updateUserTypeTo.equalsIgnoreCase("--")) {
-                    userController.changeUserType(Integer.valueOf(hidUserId), updateUserTypeTo);
-                }
-            }
-            response.sendRedirect("userManagement.jsp");
+            response.sendRedirect("clientManagement.jsp");
         } catch (SQLException ex) {
-            Logger.getLogger(updateUserAsActiveOrInactive.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(updateClientAsActiveOrInactive.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

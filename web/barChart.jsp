@@ -37,13 +37,14 @@
                     exportEnabled: true,
                     theme: "light2", // "light1", "light2", "dark1", "dark2"
                     title: {
-                        text: "Annual Cheque Deposits Over Dates"
+                        text: "" //Annual Cheque Deposits Over Dates
+
                     },
                     data: [{
                             type: "column", //change type to bar, line, area, pie, etc, column
                             //indexLabel: "{y}", //Shows y value on all Data Points
                             indexLabelFontColor: "#5A5757",
-                            indexLabelFontSize: 16,
+                            indexLabelFontSize: 12,
                             indexLabelPlacement: "outside",
                             dataPoints: [
 
@@ -65,9 +66,28 @@
                 chart.render();
             }
         </script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/css/mdb.min.css" rel="stylesheet">
+
+        <!-- JQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/js/mdb.min.js"></script>
     </head>
     <body>
-        <div id="chartContainer"  style="position: absolute; left: 20%; top: 60%;  height: 300px; width: 30%;"></div>
+        <div class="form-group" style="position: absolute; left: 60%; top: 30%; width: 37%; height: 15px">
+            <h4><b>Annual Cheque Deposits Over Dates</b></h4>
+        </div>
+        <div id="chartContainer"  style="position: absolute; left: 60%; top: 35%;  height: 450px; width: 37%;"></div>
         <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     </body>
 </html>

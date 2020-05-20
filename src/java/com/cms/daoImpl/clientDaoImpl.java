@@ -54,5 +54,22 @@ public class clientDaoImpl implements clientDao {
         ps.executeUpdate();
         return true;
     }
+    
+    public boolean changeClientStatus(int clientId, int clientCurrentStatus)throws SQLException{
+        int clientStatus = 0;
+        Connection con = DatabaseConnection.getDatabaseConnection();
+        PreparedStatement ps = con.prepareStatement("update client_detail set client_detail_status=? where client_detail_id=?");
+        if (clientCurrentStatus==Client.CLIENT_STATUS_ACTIVE) {
+            clientStatus = Client.CLIENT_STATUS_INACTIVE;
+            System.out.println("if");
+        }else if(clientCurrentStatus==Client.CLIENT_STATUS_INACTIVE){
+            clientStatus = Client.CLIENT_STATUS_ACTIVE;
+            System.out.println("else");
+        }
+        ps.setInt(1, clientStatus);
+        ps.setInt(2, clientId);
+        ps.executeUpdate();
+        return true;
+    }
 
 }

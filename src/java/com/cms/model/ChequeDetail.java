@@ -27,7 +27,7 @@ public class ChequeDetail {
     private BigDecimal chequeDetailAmount;
     private Date chequeDetailEffectiveDate;
     private int chequeDetailAccountPayOnly;
-    private int chequeDetailClientId;
+    private String chequeDetailClientName;
     private int chequeDetailUserId;
     private int chequeDetailStatus;
     private String chequeDetailDetail;
@@ -131,20 +131,6 @@ public class ChequeDetail {
     }
 
     /**
-     * @return the chequeDetailClientId
-     */
-    public int getChequeDetailClientId() {
-        return chequeDetailClientId;
-    }
-
-    /**
-     * @param chequeDetailClientId the chequeDetailClientId to set
-     */
-    public void setChequeDetailClientId(int chequeDetailClientId) {
-        this.chequeDetailClientId = chequeDetailClientId;
-    }
-
-    /**
      * @return the chequeDetailUserId
      */
     public int getChequeDetailUserId() {
@@ -184,6 +170,20 @@ public class ChequeDetail {
      */
     public void setChequeDetailDetail(String chequeDetailDetail) {
         this.chequeDetailDetail = chequeDetailDetail;
+    }
+
+    /**
+     * @return the chequeDetailClientName
+     */
+    public String getChequeDetailClientName() {
+        return chequeDetailClientName;
+    }
+
+    /**
+     * @param chequeDetailClientName the chequeDetailClientName to set
+     */
+    public void setChequeDetailClientName(String chequeDetailClientName) {
+        this.chequeDetailClientName = chequeDetailClientName;
     }
     
 }

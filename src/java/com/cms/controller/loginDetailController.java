@@ -9,7 +9,6 @@ import com.cms.daoImpl.loginDetailDaoImpl;
 import com.cms.model.LoginDetail;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 
 /**
  *
@@ -17,13 +16,10 @@ import java.sql.Timestamp;
  */
 public class loginDetailController {
     
-    public static void addLoginDetail(Timestamp loginDate, int userId, Timestamp logoutDate, String detail)throws SQLException{
+    public static void addLoginDetail(int userId, String detail)throws SQLException{
         LoginDetail loginDetail = new LoginDetail();
-        loginDetail.setLoginDetailLoginDate(loginDate);
         loginDetail.setLoginDetailUserId(userId);
-        loginDetail.setLoginDetailLogoutDate(logoutDate);
         loginDetail.setLoginDetailDetail(detail);
-        loginDetail.setLoginDetailStatus(LoginDetail.LOGIN_DETAIL_STATUS_ACTIVE);
         new loginDetailDaoImpl().addLoginDetail(loginDetail);
     }
     

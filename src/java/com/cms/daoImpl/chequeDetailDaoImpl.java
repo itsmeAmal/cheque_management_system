@@ -20,14 +20,14 @@ import java.sql.SQLException;
 public class chequeDetailDaoImpl implements chequeDetailDao {
 
     private String selectQuery = "select cheque_detail_id, cheque_detail_current_date, cheque_detail_cheque_number, cheque_detail_bank, "
-            + "cheque_detail_amount, cheque_detail_effective_date, cheque_detail_account_pay_only, cheque_detail_client_id, "
+            + "cheque_detail_amount, cheque_detail_effective_date, cheque_detail_account_pay_only, cheque_detail_client_name, "
             + "cheque_detail_user_id, cheque_detail_status, cheque_detail_detail from cheque_detail";
 
     @Override
     public boolean addChequeDetail(ChequeDetail chequeDetail) throws SQLException {
         Connection con = DatabaseConnection.getDatabaseConnection();
         PreparedStatement ps = con.prepareStatement("insert into cheque_detail (cheque_detail_current_date, cheque_detail_cheque_number,"
-                + " cheque_detail_bank, cheque_detail_amount, cheque_detail_effective_date, cheque_detail_account_pay_only, cheque_detail_client_id,"
+                + " cheque_detail_bank, cheque_detail_amount, cheque_detail_effective_date, cheque_detail_account_pay_only, cheque_detail_client_name,"
                 + " cheque_detail_user_id, cheque_detail_status, cheque_detail_detail) values (?,?,?,?,?,?,?,?,?,?)");
         ps.setDate(1, chequeDetail.getChequeDetailCurrentDate());
         ps.setString(2, chequeDetail.getChequeDetailChequeNumber());
@@ -35,7 +35,7 @@ public class chequeDetailDaoImpl implements chequeDetailDao {
         ps.setBigDecimal(4, chequeDetail.getChequeDetailAmount());
         ps.setDate(5, chequeDetail.getChequeDetailEffectiveDate());
         ps.setInt(6, chequeDetail.getChequeDetailAccountPayOnly());
-        ps.setInt(7, chequeDetail.getChequeDetailClientId());
+        ps.setString(7, chequeDetail.getChequeDetailClientName());
         ps.setInt(8, chequeDetail.getChequeDetailUserId());
         ps.setInt(9, ChequeDetail.CHEQUE_DETAIL_STATUS_ACTIVE);
         ps.setString(10, chequeDetail.getChequeDetailDetail());

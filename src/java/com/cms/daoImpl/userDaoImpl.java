@@ -74,7 +74,7 @@ public class userDaoImpl implements userDao{
     public boolean changeUserType(int userId, String userType)throws SQLException{
         Connection con = DatabaseConnection.getDatabaseConnection();
         PreparedStatement ps = con.prepareStatement("update user set user_type=? where user_id=?");
-        ps.setInt(1, commonController.getUserIntTypeByUserStringType(userType));
+        ps.setInt(1, Integer.valueOf(userType));
         ps.setInt(2, userId);
         ps.executeUpdate();
         ps.close();

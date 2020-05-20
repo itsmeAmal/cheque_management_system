@@ -45,33 +45,21 @@ public class addIssueCheque extends HttpServlet {
             boolean status = false;
 
             String bank = request.getParameter("bank");
-            String date1 = request.getParameter("date1");
-            String date2 = request.getParameter("date2");
-            String date3 = request.getParameter("date3");
-            String date4 = request.getParameter("date4");
-            String date5 = request.getParameter("date5");
-            String date6 = request.getParameter("date6");
-            String date7 = request.getParameter("date7");
-            String date8 = request.getParameter("date8");
 
             String clientName = request.getParameter("client_name");
             String paymentAmount = request.getParameter("amount");
             String chequeNo = request.getParameter("cheque_no");
+            String chequeType = request.getParameter("cheque_type");
 
-            //String effectiveDate = date1 + date2 + "/" + date3 + date4 + "/" + date5 + date6 + date7 + date8;
-            String effectiveDate = date5 + date6 + date7 + date8 + "/" + date3 + date4 + "/" + date1 + date2;
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-            Date langDate = sdf.parse(effectiveDate);
-            java.sql.Date sqlDate = new java.sql.Date(langDate.getTime());
+            java.sql.Date effectiveDate = commonController.getSqlDateByString(request.getParameter("date"));
             try {
                 status = chequeDetailController.addChequeDetail(commonController.getCurrentJavaSqlDate(), chequeNo, bank,
-                        commonController.getBigDecimalOrZeroFromString(paymentAmount), sqlDate, 0, 0, "TestDetail", 0);
+                        commonController.getBigDecimalOrZeroFromString(paymentAmount), effectiveDate, clientName, 0, chequeType, 0);
                 if (status) {
                     response.sendRedirect("addIssueCheque.jsp");
                 } else {
                     out.write("error...!");
                 }
-
             } catch (SQLException ex) {
                 Logger.getLogger(addIssueCheque.class.getName()).log(Level.SEVERE, null, ex);
             }

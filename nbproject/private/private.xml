@@ -3,13 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/cms/cheque%20management%20system/cheque%20management%20system/web/WEB-INF/web.xml</file>
-            <file>file:/D:/cms/cheque%20management%20system/cheque%20management%20system/web/error.jsp</file>
-            <file>file:/D:/cms/cheque%20management%20system/cheque%20management%20system/src/java/com/cms/controller/commonController.java</file>
-            <file>file:/D:/cms/cheque%20management%20system/cheque%20management%20system/web/barChart.jsp</file>
-            <file>file:/D:/cms/cheque%20management%20system/cheque%20management%20system/web/dashboard.jsp</file>
-            <file>file:/D:/cms/cheque%20management%20system/cheque%20management%20system/src/java/com/cms/servlet/addIssueCheque.java</file>
-            <file>file:/D:/cms/cheque%20management%20system/cheque%20management%20system/src/java/com/cms/daoImpl/commonDaoImpl.java</file>
+            <file>file:/C:/Users/Amal/Desktop/dlt/cheque%20management%20system/src/java/com/cms/databaseConnection/DatabaseConnection.java</file>
         </group>
     </open-files>
 </project-private>

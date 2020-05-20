@@ -19,18 +19,16 @@ import java.sql.SQLException;
  */
 public class loginDetailDaoImpl implements loginDetailDao{
     
-    private String selectQuery = "select login_detail_id, login_detail_login_date, login_detail_user_id, login_detail_logout_date, login_detail_status, login_detail_detail from loginDetail";
+    private String selectQuery = "select login_detail_id, login_detail_login_date, login_detail_user_id, login_detail_logout_date, login_detail_status, login_detail_detail from login_detail";
 
     @Override
     public void addLoginDetail(LoginDetail loginDetail) throws SQLException {
         Connection con = DatabaseConnection.getDatabaseConnection();
-        PreparedStatement ps = con.prepareStatement("insert into loginDetail (login_detail_login_date, login_detail_user_id, login_detail_logout_date, login_detail_status,"
-                + " login_detail_detail) values (?,?,?,?,?)");
-        ps.setTimestamp(1, loginDetail.getLoginDetailLoginDate());
-        ps.setInt(2, loginDetail.getLoginDetailUserId());
-        ps.setTimestamp(3, loginDetail.getLoginDetailLogoutDate());
-        ps.setInt(4, LoginDetail.LOGIN_DETAIL_STATUS_ACTIVE);
-        ps.setString(5, loginDetail.getLoginDetailDetail());
+        PreparedStatement ps = con.prepareStatement("insert into login_detail ( login_detail_user_id, login_detail_status,"
+                + " login_detail_detail) values (?,?,?)");
+        ps.setInt(1, loginDetail.getLoginDetailUserId());
+        ps.setInt(2, LoginDetail.LOGIN_DETAIL_STATUS_ACTIVE);
+        ps.setString(3, loginDetail.getLoginDetailDetail());
         ps.executeUpdate();
         ps.close();
     }

@@ -18,7 +18,7 @@ import java.sql.SQLException;
  */
 public class chequeDetailController {
     
-    public static boolean addChequeDetail(Date currentDate,String chequeNumber,String bank,BigDecimal amount,Date effectiveDate,int clientId,int userId,
+    public static boolean addChequeDetail(Date currentDate,String chequeNumber,String bank,BigDecimal amount,Date effectiveDate,String clientName,int userId,
             String detail,int accountPayOnly)throws SQLException{
         ChequeDetail chequeDeatail = new ChequeDetail();
         chequeDeatail.setChequeDetailCurrentDate(currentDate);
@@ -26,7 +26,7 @@ public class chequeDetailController {
         chequeDeatail.setChequeDetailBank(bank);
         chequeDeatail.setChequeDetailAmount(amount);
         chequeDeatail.setChequeDetailEffectiveDate(effectiveDate);
-        chequeDeatail.setChequeDetailClientId(clientId);
+        chequeDeatail.setChequeDetailClientName(clientName);
         chequeDeatail.setChequeDetailUserId(userId);
         chequeDeatail.setChequeDetailDetail(detail);
         chequeDeatail.setChequeDetailAccountPayOnly(accountPayOnly);
@@ -53,7 +53,7 @@ public class chequeDetailController {
             chequeDetail.setChequeDetailAmount(rset.getBigDecimal("cheque_detail_amount"));
             chequeDetail.setChequeDetailEffectiveDate(rset.getDate("cheque_detail_effective_date"));
             chequeDetail.setChequeDetailAccountPayOnly(rset.getInt("cheque_detail_account_pay_only"));
-            chequeDetail.setChequeDetailClientId(rset.getInt("cheque_detail_client_id"));
+            chequeDetail.setChequeDetailClientName(rset.getString("cheque_detail_client_name"));
             chequeDetail.setChequeDetailUserId(rset.getInt("cheque_detail_user_id"));
             chequeDetail.setChequeDetailStatus(rset.getInt("cheque_detail_status"));
             chequeDetail.setChequeDetailDetail(rset.getString("cheque_detail_detail"));

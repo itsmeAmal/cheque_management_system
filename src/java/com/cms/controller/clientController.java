@@ -53,4 +53,8 @@ public class clientController {
         ResultSet rset = getClientByOneAttribute("client_detail_id", commonConstants.Sql.EQUAL, Integer.toString(clientId));
         return getClientByResultSet(rset);
     }
+    
+    public static boolean changeClientStatus(int clientId, int clientCurrentStatus)throws SQLException{
+        return new clientDaoImpl().changeClientStatus(clientId, clientCurrentStatus);
+    }
 }
