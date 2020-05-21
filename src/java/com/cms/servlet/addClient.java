@@ -47,22 +47,6 @@ public class addClient extends HttpServlet {
             try {
                 status = clientController.addClient(clientName, contactNo, nic, note);
                 if (status) {
-                    out.write("<html>");
-
-                    out.write("<header>");
-                    out.write("</header>");
-
-                    out.write("<body>");
-                    out.write("<script type=\"text/javascript\">\n"
-                            + "jQuery(document).ready(function($){\n"
-                            + "$(\".frm_message\").delay(5000).fadeOut(1000); // change 5000 to number of seconds in milliseconds  \n"
-                            + "});\n"
-                            + "</script>");
-
-                    out.write("</body>");
-
-                    out.write("</html>");
-
                     response.sendRedirect("addClient.jsp");
                 } else {
                     out.write("Error...!");

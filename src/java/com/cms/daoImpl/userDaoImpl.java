@@ -5,7 +5,6 @@
  */
 package com.cms.daoImpl;
 
-import com.cms.controller.commonController;
 import com.cms.dao.userDao;
 import com.cms.databaseConnection.DatabaseConnection;
 import com.cms.model.User;

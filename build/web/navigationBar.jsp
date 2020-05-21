@@ -29,6 +29,10 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/js/mdb.min.js"></script>
     </head>
     <body>
+        <%
+            HttpSession ses = request.getSession();
+            User user = (User) ses.getAttribute("loggedUser");
+        %>
         <nav class="navbar card text-white bg-info mb-3 fixed-top navbar-expand-lg navbar-dark pink scrolling-navbar ">
             <a class="navbar-brand" href="dashboard.jsp"><strong>C M S DASHBOARD<span class="sr-only">(current)</span></strong></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -37,6 +41,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
+                    <%
+                        if (user.getUserType() == User.USER_TYPE_ADMIN || user.getUserType() == User.USER_TYPE_MANAGER) {
+                    %>
                     <li class="nav-item">
                         <a class="nav-link" href="userManagement.jsp">Manage Users </a>
                     </li>
@@ -52,6 +59,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="addClient.jsp">Add Clients</a>
                     </li>
+                    <%
+                    } else if (user.getUserType() == User.USER_TYPE_USER || user.getUserType() == User.USER_TYPE_GUEST) {
+                    %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="addIssueCheque.jsp">Manage Cheques</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="addClient.jsp">Add Clients</a>
+                    </li>
+                    <%
+                    }
+                    %>
+
                 </ul>
                 <ul class="navbar-nav nav-flex-icons">
                     <li class="nav-item">
@@ -68,8 +88,6 @@
                 <ul class="navbar-nav nav-flex-icons" style="position: absolute; left: 80%; top: 58%; width: 300px; height: 60px;">
                     <li class="nav-item">
                         <%
-                            HttpSession ses = request.getSession();
-                            User user = (User) ses.getAttribute("loggedUser");
                             if (user != null) {
                         %>
                     <li><a href="#" style="color: #ffffff"><span class="glyphicon glyphicon-log-in"></span><b>Hi, <%=user.getUserName()%></b> </a></li>
