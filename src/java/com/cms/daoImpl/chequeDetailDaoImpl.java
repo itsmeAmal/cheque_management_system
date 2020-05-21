@@ -5,6 +5,7 @@
  */
 package com.cms.daoImpl;
 
+import com.cms.controller.commonController;
 import com.cms.dao.chequeDetailDao;
 import com.cms.databaseConnection.DatabaseConnection;
 import com.cms.model.ChequeDetail;
@@ -61,6 +62,20 @@ public class chequeDetailDaoImpl implements chequeDetailDao {
         ps.setInt(1, chequeDetailId);
         ps.executeUpdate();
         return true;
+    }
+
+    public int getchequeCountForToday(String chaqueStatus) throws SQLException {
+        int chequeDatedForToday = 0;
+        Connection con = DatabaseConnection.getDatabaseConnection();
+        PreparedStatement ps = con.prepareStatement("SELECT count(cheque_detail_id) as cheques_count from cheque_detail where cheque_detail_effective_date=? and "
+                + "cheque_detail_detail=?");
+        ps.setDate(1, commonController.getCurrentJavaSqlDate());
+        ps.setString(2, chaqueStatus);
+        ResultSet rset = ps.executeQuery();
+        while (rset.next()) {
+            chequeDatedForToday = rset.getInt("cheques_count");
+        }
+        return chequeDatedForToday;
     }
 
 }

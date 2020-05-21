@@ -4,6 +4,7 @@
     Author     : Amal
 --%>
 
+<%@page import="com.cms.controller.chequeDetailController"%>
 <%@page import="com.cms.controller.commonController"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -30,7 +31,13 @@
     <body>
         <div class="card text-white bg-primary mb-3" style="max-width: 20rem; position: absolute; left: 20%; top: 17%; width: 15%; height: 80px; z-index:-1;">
             <div style="position: absolute; left: 0%; align-content: center; padding-top: 6%; width: 100%; height: 80px;"  class="card-header">
-                <div style="position: absolute; left: 40%; align-content: center; padding-top: 2%">Current</br> Users</div>          
+                <div style="position: absolute; left: 40%; align-content: center; padding-top: 2%">Issued Cheques </br> dated for today</div>          
+            </div>
+            <div style="position: absolute; left: 20%; top: 35%; width: 4%; height: 80px;">
+                <%
+                    int chequeCountIssued = chequeDetailController.getchequeCountForToday("Issued");
+                %>
+                <%=chequeCountIssued%>
             </div>
         </div>
 
@@ -62,10 +69,14 @@
         </div>
         <div class="card text-white bg-warning mb-3" style="max-width: 20rem; position: absolute; left: 80%; top: 17%; width: 16%; height: 80px; z-index:-1;">
             <div style="position: absolute; left: 0%; align-content: center; padding-top: 6%; width: 100%; height: 80px;"  class="card-header">
-                <div style="position: absolute; left: 40%; align-content: center; padding-top: 2%">Cheques dated</br> for today</div>          
+                <div style="position: absolute; left: 40%; align-content: center; padding-top: 2%">Received Cheques </br> dated for today</div>          
             </div>
             <div style="position: absolute; left: 20%; top: 35%; width: 4%; height: 80px;">
+                <%
+                    int chequeCount = chequeDetailController.getchequeCountForToday("Received");
+                %>
 
+                <%=chequeCount%>
             </div>
         </div>
     </body>

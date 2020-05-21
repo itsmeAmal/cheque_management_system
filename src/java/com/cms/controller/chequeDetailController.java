@@ -17,9 +17,9 @@ import java.sql.SQLException;
  * @author Chamalki Madushika
  */
 public class chequeDetailController {
-    
-    public static boolean addChequeDetail(Date currentDate,String chequeNumber,String bank,BigDecimal amount,Date effectiveDate,String clientName,int userId,
-            String detail,int accountPayOnly)throws SQLException{
+
+    public static boolean addChequeDetail(Date currentDate, String chequeNumber, String bank, BigDecimal amount, Date effectiveDate, String clientName, int userId,
+            String detail, int accountPayOnly) throws SQLException {
         ChequeDetail chequeDeatail = new ChequeDetail();
         chequeDeatail.setChequeDetailCurrentDate(currentDate);
         chequeDeatail.setChequeDetailChequeNumber(chequeNumber);
@@ -33,18 +33,18 @@ public class chequeDetailController {
         chequeDeatail.setChequeDetailStatus(ChequeDetail.CHEQUE_DETAIL_STATUS_ACTIVE);
         return new chequeDetailDaoImpl().addChequeDetail(chequeDeatail);
     }
-    
-    public static ResultSet getAllChequeDetails()throws SQLException{
+
+    public static ResultSet getAllChequeDetails() throws SQLException {
         return new chequeDetailDaoImpl().getAllChequeDetails();
     }
-    
-    public static ResultSet getChequeDetailByOneAttribute(String attribute, String condition, String value)throws SQLException{
+
+    public static ResultSet getChequeDetailByOneAttribute(String attribute, String condition, String value) throws SQLException {
         return new chequeDetailDaoImpl().getChequeDetailByOneAttribute(attribute, condition, value);
     }
-    
-    public static ChequeDetail getChequeDetailByResultSet(ResultSet rset)throws SQLException{
+
+    public static ChequeDetail getChequeDetailByResultSet(ResultSet rset) throws SQLException {
         ChequeDetail chequeDetail = null;
-        while (rset.next()) {            
+        while (rset.next()) {
             chequeDetail = new ChequeDetail();
             chequeDetail.setChequeDetailId(rset.getInt("cheque_detail_id"));
             chequeDetail.setChequeDetailCurrentDate(rset.getDate("cheque_detail_current_date"));
@@ -60,9 +60,13 @@ public class chequeDetailController {
         }
         return chequeDetail;
     }
-    
-    public static ChequeDetail getChequeDetailByChequeDetailId(int chequeDetailId)throws SQLException{
+
+    public static ChequeDetail getChequeDetailByChequeDetailId(int chequeDetailId) throws SQLException {
         ResultSet rset = getChequeDetailByOneAttribute("cheque_detail_id", commonConstants.Sql.EQUAL, Integer.toString(chequeDetailId));
         return getChequeDetailByResultSet(rset);
+    }
+
+    public static int getchequeCountForToday(String chequeStatus) throws SQLException {
+        return new chequeDetailDaoImpl().getchequeCountForToday(chequeStatus);
     }
 }

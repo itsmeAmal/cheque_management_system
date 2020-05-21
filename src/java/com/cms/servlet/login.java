@@ -102,7 +102,12 @@ public class login extends HttpServlet {
 
                     loginDetailController.addLoginDetail(curUser.getUserId(), " User " + curUser.getUserName() + " - " + " browser " + browser + " - " + " os " + os);
 
-                    response.sendRedirect("dashboard.jsp");
+                    if (curUser.getUserStatus() == User.USER_STATUS_ACTIVE) {
+                        response.sendRedirect("dashboard.jsp");
+                    } else {
+                        response.sendRedirect("login.jsp");
+                    }
+
                 } else {
                     response.sendRedirect("login.jsp");
                 }
