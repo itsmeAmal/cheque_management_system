@@ -5,7 +5,6 @@
  */
 package com.cms.dao;
 
-import com.cms.model.ChequeDetail;
 import com.cms.model.LoginDetail;
 import java.sql.ResultSet;
 import java.sql.SQLException;
