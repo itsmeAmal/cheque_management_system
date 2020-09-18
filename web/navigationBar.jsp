@@ -34,7 +34,7 @@
             User user = (User) ses.getAttribute("loggedUser");
         %>
         <nav class="navbar card text-white bg-info mb-3 fixed-top navbar-expand-lg navbar-dark pink scrolling-navbar ">
-            <a class="navbar-brand" href="dashboard.jsp"><strong>C M S DASHBOARD<span class="sr-only">(current)</span></strong></a>
+            <a class="navbar-brand" href="dashboard.jsp"><strong>DASHBOARD<span class="sr-only">(current)</span></strong></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -45,20 +45,20 @@
                         if (user.getUserType() == User.USER_TYPE_ADMIN || user.getUserType() == User.USER_TYPE_MANAGER) {
                     %>
                     <li class="nav-item">
-                        <a class="nav-link" href="userManagement.jsp">Manage Users </a>
+                        <a class="nav-link" href="userManagement.jsp">Enable New Device </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="clientManagement.jsp">Manage Clients</a>
+                        <a class="nav-link" href="clientManagement.jsp">Device Stat.</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="addIssueCheque.jsp">Manage Cheques</a>
+                        <a class="nav-link" href="addIssueCheque.jsp">Mobile App</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="addUser.jsp">Add Users</a>
+                        <a class="nav-link" href="addUser.jsp">Contact Service Provider</a>
                     </li>
-                    <li class="nav-item">
+<!--                    <li class="nav-item">
                         <a class="nav-link" href="addClient.jsp">Add Clients</a>
-                    </li>
+                    </li>-->
                     <%
                     } else if (user.getUserType() == User.USER_TYPE_USER || user.getUserType() == User.USER_TYPE_GUEST) {
                     %>
@@ -90,7 +90,7 @@
                         <%
                             if (user != null) {
                         %>
-                    <li><a href="#" style="color: #ffffff"><span class="glyphicon glyphicon-log-in"></span><b>Hi, <%=user.getUserName()%></b> </a></li>
+                    <li><a href="#" style="color: #ffffff"><span class="glyphicon glyphicon-log-in"></span><b>Hi, User</b> </a></li>
                                 <%
                                     } else {
                                         response.sendRedirect("login.jsp");

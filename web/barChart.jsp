@@ -85,7 +85,7 @@
     </head>
     <body>
         <div class="form-group" style="position: absolute; left: 60%; top: 30%; width: 37%; height: 15px">
-            <h4><b>Annual Cheque Deposits Over Dates</b></h4>
+            <h4><b>Overall Smart Devices Usage</b></h4>
         </div>
         <div id="chartContainer"  style="position: absolute; left: 60%; top: 35%;  height: 450px; width: 37%;"></div>
         <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>

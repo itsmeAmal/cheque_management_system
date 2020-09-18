@@ -33,7 +33,7 @@
             <div style="position: absolute; left: 35%; top: 12%; width: 30%; height: 70%">
             </div>
             <div class="form-group" style="position: absolute; left: 40%; top: 17%; width: 20%; height: 15px">
-                <h4>CREATE USER ACCOUNT</h4>
+                <h4>CREATE SMART DEVICE USER</h4>
             </div>
             <div class="form-group" style="position: absolute; left: 40%; top: 25%; width: 20%; height: 15px">
                 <input type="text" class="form-control" id="usr" name="usr" placeholder="User Name" required>
@@ -44,19 +44,25 @@
             <div class="form-group" style="position: absolute; left: 40%; top: 41%; width: 20%; height: 15px">
                 <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password" required>
             </div>
-            <div class="form-group" style="position: absolute; left: 40%; top: 47%; width: 20%; height: 15px">
-                <p style="font-size: 12px">Use 8 or more characters with a mix of letters, numbers & symbols</p>
+            <div class="form-group" style="position: absolute; left: 40%; top: 49%; width: 20%; height: 15px">
+                <p>Select Devices:</p>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Gas Leakage</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Regulate Water Tank</label><br>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Bluetooth Light Controller</label><br>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Smart Dustbin</label>
             </div>
-
+           
             <!-- Default unchecked -->
-            <div class="custom-control custom-checkbox" style="position: absolute; left: 40%; top: 56%; width: 50px; height: 10px">
+            <div class="custom-control custom-checkbox" style="position: absolute; left: 40%; top: 67%; width: 50px; height: 10px">
                 <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
             </div>
-            <div style="position: absolute; left: 41%; top: 55%; width: 17%; height: 30px">
-                <label for="defaultUnchecked"><p style="font-size: 14px">To create a User Account, you’ll need to agree to the Terms of Service.</p></label>
-            </div>
+        
 
-            <div class="form-group" style="position: absolute; left: 40%; top: 66%; width: 20%; height: 15px">
+            <div class="form-group" style="position: absolute; left: 40%; top: 86%; width: 20%; height: 15px">
                 <input type="submit" class="btn btn-info" value="Create Account">
             </div>
         </form>

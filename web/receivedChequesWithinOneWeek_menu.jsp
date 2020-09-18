@@ -43,7 +43,7 @@
     </head>
     <body>
         <div style="position: absolute; left: 20%; top: 65%; width: 37%; height: 5%">
-            <h4 style="color: #000000"><b>Received / Issued Cheque Details</b></h4>
+            <h4 style="color: #000000"><b>Service History</b></h4>
         </div>
         <div style="position: absolute; left: 20%; top: 70%; width: 37%; height: 35%"> 
             <div class="table-wrapper-scroll-y my-custom-scrollbar">
@@ -55,9 +55,9 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col"><i class="fas fa-table mr-2 grey-text" aria-hidden="true"></i>Cheque No</th>
-                            <th scope="col"><i class="fas fa-edit mr-2 grey-text" aria-hidden="true"></i>Date</th>
-                            <th scope="col"><i class="fas fa-download mr-2 grey-text" aria-hidden="true"></i>Received/Issued</th>
+                            <th scope="col"><i class="fas fa-table mr-2 grey-text" aria-hidden="true"></i>Date</th>
+                            <th scope="col"><i class="fas fa-edit mr-2 grey-text" aria-hidden="true"></i>Issue Type</th>
+                            <th scope="col"><i class="fas fa-download mr-2 grey-text" aria-hidden="true"></i>Done By</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -67,9 +67,9 @@
                         %>
                         <tr style="height: 30px">
                             <th scope="row"><%= ++chequeOrderNumber%></th>
-                            <td><%=rset3.getString("cheque_detail_cheque_number")%></td>
-                            <td><%=rset3.getDate("cheque_detail_effective_date")%></td>
-                            <td><%=rset3.getString("cheque_detail_detail")%></td>
+                            <td>2020/10/20</td>
+                            <td>Sensor Issue </td>
+                            <td>Pathum</td>
                         </tr>
                         <%
                             }

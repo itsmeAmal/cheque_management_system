@@ -46,16 +46,16 @@
             int i = 0;
         %>
         <div style="position: absolute; left: 20%; top: 30%; width: 30%; height: 5%">
-            <h4 style="color: #000000"><b>Active User Accounts</b></h4>
+            <h4 style="color: #000000"><b>Billing History</b></h4>
         </div>
-        <div style="position: absolute; left: 20%; top: 35%; width: 37%; height: 20%">
+        <div style="position: absolute; left: 20%; top: 35%; width: 37%; height: 10%">
             <div class="table-wrapper-scroll-y my-custom-scrollbar">
                 <table class="table table-bordered table-striped mb-0">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col"><i class="fas fa-image mr-2 grey-text" aria-hidden="true"></i>User Name</th>
-                            <th scope="col"><i class="fas fa-book mr-2 grey-text" aria-hidden="true"></i>Email</th>
+                            <th scope="col"><i class="fas fa-image mr-2 grey-text" aria-hidden="true"></i>Date</th>
+                            <th scope="col"><i class="fas fa-book mr-2 grey-text" aria-hidden="true"></i>Bill No</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -63,9 +63,10 @@
                             while (rset4.next()) {
                         %>
                         <tr>
-                            <th scope="row"><%= ++i%></th>
-                            <td><%=rset4.getString("user_name")%></td>
-                            <td><%=rset4.getString("user_email")%></td>
+                            <th scope="row"></th>
+                            <td>2020/10/20</td>
+                            <td>1002001</td>
+
                         </tr>
                         <%
                             }
