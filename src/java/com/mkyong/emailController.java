@@ -4,6 +4,7 @@ import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
+import java.util.Random;
 
 public class emailController {
 
@@ -11,8 +12,8 @@ public class emailController {
 
     public emailController(String ToEmail) {
         emailController.ToEmailFromRegUi = ToEmail;
-        
-            final String username = "wickramarathna.amal@gmail.com";
+
+        final String username = "wickramarathna.amal@gmail.com";
         final String password = "opgkslszguonxkon";
 
         Properties prop = new Properties();
@@ -34,10 +35,12 @@ public class emailController {
             message.setFrom(new InternetAddress(ToEmailFromRegUi));
             message.setRecipients(
                     Message.RecipientType.TO,
-                    InternetAddress.parse("digitalhome223344@gmail.com")
+                    InternetAddress.parse(ToEmailFromRegUi)
             );
             message.setSubject("Smart House");
-            message.setText("You are registered successfully !");
+            Random rand = new Random();
+            int value = rand.nextInt(50);
+            message.setText("You are registered successfully !" + value+"@digitalhome.lk" + "  and your pw is 1234dg"); 
 
             Transport.send(message);
 
