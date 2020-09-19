@@ -4,7 +4,6 @@
     Author     : Amal
 --%>
 
-<%@page import="com.cms.controller.chequeDetailController"%>
 <%@page import="com.cms.controller.userController"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -49,7 +48,6 @@
             <div class="table-wrapper-scroll-y my-custom-scrollbar">
                 <!--background-color: rgba(26, 163, 255)-->
                 <%
-                    ResultSet rset3 = chequeDetailController.getAllChequeDetails();
                 %>
                 <table class="table table-bordered table-striped mb-0">
                     <thead>
@@ -63,7 +61,7 @@
                     <tbody>
                         <%
                             int chequeOrderNumber = 0;
-                            while (rset3.next()) {
+                           
                         %>
                         <tr style="height: 30px">
                             <th scope="row"><%= ++chequeOrderNumber%></th>
@@ -72,7 +70,7 @@
                             <td>Pathum</td>
                         </tr>
                         <%
-                            }
+                            
                         %>
                     </tbody>
                 </table>

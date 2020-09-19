@@ -4,7 +4,6 @@
     Author     : Chamalki Madushika
 --%>
 
-<%@page import="com.cms.controller.chequeDetailController"%>
 <%@page import="com.cms.controller.clientController"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -141,25 +140,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <%
-                                ResultSet rset2 = chequeDetailController.getAllChequeDetails();
-                                while (rset2.next()) {
-                            %>
-                            <!--cheque_detail_id, , , , 
-                            , , cheque_detail_account_pay_only, , 
-                            cheque_detail_user_id, , cheque_detail_detail-->
-                            <tr>                            
-                                <td><%= rset2.getString("cheque_detail_cheque_number")%></td>
-                                <td><%= rset2.getString("cheque_detail_client_name")%></td>
-                                <td><%= rset2.getDate("cheque_detail_effective_date")%></td>
-                                <td><%= rset2.getString("cheque_detail_bank")%></td>
-                                <td><%= rset2.getDate("cheque_detail_current_date")%></td>
-                                <td><%= rset2.getString("cheque_detail_amount")%></td>
-                                <td><%= rset2.getString("cheque_detail_detail")%></td>
-                            </tr>
-                            <%
-                                }
-                            %>
+
+
                         </tbody>
                     </table>
                 </form>

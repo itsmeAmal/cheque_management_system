@@ -17,18 +17,18 @@
             BigDecimal novValue = BigDecimal.ZERO;
             BigDecimal decValue = BigDecimal.ZERO;
 
-            janValue = commonController.getMonthlyChequeDepositValue(1);
-            febValue = commonController.getMonthlyChequeDepositValue(2);
-            marValue = commonController.getMonthlyChequeDepositValue(3);
-            aprValue = commonController.getMonthlyChequeDepositValue(4);
-            mayValue = commonController.getMonthlyChequeDepositValue(5);
-            junValue = commonController.getMonthlyChequeDepositValue(6);
-            julValue = commonController.getMonthlyChequeDepositValue(7);
-            augValue = commonController.getMonthlyChequeDepositValue(8);
-            sepValue = commonController.getMonthlyChequeDepositValue(9);
-            octValue = commonController.getMonthlyChequeDepositValue(10);
-            novValue = commonController.getMonthlyChequeDepositValue(11);
-            decValue = commonController.getMonthlyChequeDepositValue(12);
+            janValue = new BigDecimal(20000);
+            febValue = new BigDecimal(10000);
+            marValue = new BigDecimal(5000);
+            aprValue = new BigDecimal(30000);
+            mayValue = new BigDecimal(30000);
+            junValue = new BigDecimal(40000);
+            julValue = new BigDecimal(50000);
+            augValue = new BigDecimal(60000);
+            sepValue = new BigDecimal(10000);
+            octValue = new BigDecimal(10000);
+            novValue = new BigDecimal(20000);
+            decValue = new BigDecimal(90000);
         %>
         <script>
             window.onload = function () {

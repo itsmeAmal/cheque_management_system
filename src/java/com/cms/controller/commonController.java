@@ -65,10 +65,6 @@ public class commonController {
         }
     }
 
-    public static BigDecimal getMonthlyChequeDepositValue(int month) throws SQLException {
-        return new commonDaoImpl().getMonthlyChequeDepositValue(month);
-    }
-
     public static int getUserIntTypeByUserStringType(String userTypeString) {
         int userTypeInt = 0;
         if (userTypeString.equalsIgnoreCase("Admin")) {

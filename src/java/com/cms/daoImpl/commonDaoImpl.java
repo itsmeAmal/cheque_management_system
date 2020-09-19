@@ -24,11 +24,8 @@ public class commonDaoImpl implements commonDao {
     @Override
     public ResultSet getResultByAttribute(String selectQuery, String attribute, String condition, String value) throws SQLException {
         Connection con = DatabaseConnection.getDatabaseConnection();
-        System.out.println(selectQuery + commonConstants.Sql.WHERE + attribute + condition
-                + commonConstants.Sql.PARAMETER);
         PreparedStatement ps = con.prepareStatement(selectQuery + commonConstants.Sql.WHERE + attribute + condition
                 + commonConstants.Sql.PARAMETER);
-
         ps.setString(1, value);
         ResultSet rst = ps.executeQuery();
         return rst;
@@ -75,19 +72,5 @@ public class commonDaoImpl implements commonDao {
             status = true;
         }
         return status;
-    }
-
-    public BigDecimal getMonthlyChequeDepositValue(int month) throws SQLException {
-        BigDecimal value = BigDecimal.ZERO;
-        Connection con = DatabaseConnection.getDatabaseConnection();
-        PreparedStatement ps = con.prepareStatement("select month(cheque_detail_effective_date) as cheque_month,"
-                + " sum(cheque_detail_amount) as total_amount from cheque_detail where month(cheque_detail_effective_date)=? "
-                + " and cheque_detail_detail='Received' group by cheque_month");
-        ps.setInt(1, month);
-        ResultSet rset = ps.executeQuery();
-        while (rset.next()) {
-            value = rset.getBigDecimal("total_amount");
-        }
-        return value;
     }
 }

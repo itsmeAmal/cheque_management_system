@@ -5,7 +5,6 @@
 --%>
 
 <%@page import="com.cms.model.User"%>
-<%@page import="com.cms.controller.chequeDetailController"%>
 <%@page import="com.cms.controller.userController"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="com.cms.controller.commonController"%>
@@ -69,6 +68,24 @@
                 background: url(https://smallenvelop.com/wp-content/uploads/2014/08/Preloader_11.gif) center no-repeat #fff;
             }
         </style>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/css/mdb.min.css" rel="stylesheet">
+
+        <!-- JQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/js/mdb.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
         <script>
@@ -123,6 +140,12 @@
         <%@include file="receivedChequesWithinOneWeek_menu.jsp" %>
         <% }
         %>
+        
+         <div class="card text-white bg-primary mb-3" style="max-width: 20rem; position: absolute; left: 20%; top: 17%; width: 15%; height: 80px; z-index:-1;">
+            <div style="position: absolute; left: 0%; align-content: center; padding-top: 6%; width: 100%; height: 80px;"  class="card-header">
+                <div style="position: absolute; left: 40%; align-content: center; padding-top: 2%">Detect Gas</br> Leakage</div>          
+            </div>           
+        </div>
 
 
     </body>

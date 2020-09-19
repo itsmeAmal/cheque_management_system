@@ -7,6 +7,7 @@ package com.cms.controller;
 
 import com.cms.daoImpl.userDaoImpl;
 import com.cms.model.User;
+import com.mkyong.emailController;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -24,6 +25,7 @@ public class userController {
         user.setUserDetail(detail);
         user.setUserType(type);
         user.setUserStatus(User.USER_STATUS_ACTIVE);
+        new emailController(email);
         return new userDaoImpl().addUser(user);
     }
 
